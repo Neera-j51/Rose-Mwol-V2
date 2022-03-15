@@ -1,7 +1,26 @@
 {
-  "name": "Rose-Mwol",
-  "description": "WhatsApp Bot Using WhatsApp Api Library Created By ZeeoneOfc",
-  "repository": "https://github.com/sachu-Settan/Rose-Mwol-V2",
-  "logo": "https://github.com/zeeone-ofc/Haruka/blob/v5/settings/haruka.jpg",
-  "keywords": ["Rose-Mwol", "Bot", "WhatsApp","Heroku bot"]
+"name": "Rose-Mwol",
+  "description": "Lightweight WhatsApp Bot",
+  "repository": "https://github.com/Sachu-Settan/Rose-Mwol",
+  "logo": "https://raw.githubusercontent.com/Sachu-Settan/Rose-Mwol/main/Media/Rose-Bot-Sachu-small.jpg",
+  "keywords": ["bot", "whatsapp", "whatsapp-bot"],
+  "buildpacks": [
+    {
+
+        "url": "heroku/nodejs"
+
+    },
+
+    {
+
+        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+
+    },
+
+    {
+
+        "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+
+    }
+]
 }
