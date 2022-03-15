@@ -4,4 +4,23 @@
   "repository": "https://github.com/sachu-Settan/Rose-Mwol-V2",
   "logo": "https://github.com/zeeone-ofc/Haruka/blob/v5/settings/haruka.jpg",
   "keywords": ["Rose-Mwol", "Bot", "WhatsApp","Heroku bot"]
+  "buildpacks": [
+    {
+
+        "url": "heroku/nodejs"
+
+    },
+
+    {
+
+        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+
+    },
+
+    {
+
+        "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick"
+
+    }
+]
 }
