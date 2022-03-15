@@ -32,7 +32,7 @@ exports.admin = (groupName) =>{
 	return`🙅‍♀️ Command khusus admin ${groupName}`
 	}
 exports.adminB = () =>{
-	return`⚠️ Bot bukan admin grup`
+	return`⚠️ Make Bot As Admin`
 	}
 exports.err = () =>{
 	return`⚠️ Fitur ini sedang eror !`
@@ -42,18 +42,18 @@ exports.group = () =>{
 	}
 
 exports.wait = () =>{
-	return`⏳ Sedang di proses ~`
+	return`_*⏳ Please Wait ~ *_`
 	}
 exports.ok = () =>{
 	return` ✅ Oke done ~`
 	}
 exports.welcome = () =>{
 	return`Jangan Lupa Intro Ya~
-⌯ָ   ֙Nama :
-⌯ָ   ֙Umur :
-⌯ָ   ֙Kelamin :
-⌯ָ   ֙Askot :
-╰─ ᝬ _Patuhi Rules Group Ya_  >_<`
+⌯ָ   ֙ Name :
+⌯ָ   ֙ Age :
+⌯ָ   ֙ Kelamin :
+⌯ָ   ֙ Askot :
+╰─ ᝬ _Group Rules_  >_<`
       }
 exports.leave = () =>{
 	return`
@@ -61,17 +61,19 @@ exports.leave = () =>{
 ╰─ ᝬ _Balik Lagi Wajib Donasi Ya_ >_<`
 }
 exports.menu = (prefix, salam, pushname) =>{
-	return`Hi ${pushname}, selamat ${salam}
+	return`Hi ${pushname}, Good ${salam}
 
 ╭─⬣ *List Menu*
+│
 │ • ${prefix}menu
 │ • ${prefix}help
-│ • ${prefix}haruka
+│ • ${prefix}rose
 │
 ├ *Download*
-│ • ${prefix}play [query]
-│ • ${prefix}song [judul lagu]
-│ • ${prefix}pinterest [query]
+│
+│ • ${prefix}play [Query]
+│ • ${prefix}song [Query]
+│ • ${prefix}pinterest [Query]
 │ • ${prefix}ytmp3 [url]
 │ • ${prefix}ytmp4 [url]
 │ • ${prefix}tiktok [url]
@@ -81,14 +83,15 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}soundcloud [url]
 │ • ${prefix}telesticker [url]
 │ • ${prefix}spotify [url]
-│ • ${prefix}spotifysearch [query]
+│ • ${prefix}spotifysearch [Query]
 │ • ${prefix}nhentai [code]
 │ • ${prefix}nhentaipdf [code]
-│ • ${prefix}nhentaisearch [query]
+│ • ${prefix}nhentaisearch [Query]
 │
 ├ *Convert*
+│
 │ • ${prefix}stiker [video/image]
-│ • ${prefix}semoji 😎
+│ • ${prefix}semoji 
 │ • ${prefix}smeme [text]
 │ • ${prefix}memegen [text|text2]
 │ • ${prefix}fast [video/vn]
@@ -100,12 +103,14 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}nightcore [video/vn]
 │
 ├ *Education*
+│
 │ • ${prefix}nuliskiri [text]
 │ • ${prefix}nuliskanan [text]
 │ • ${prefix}foliokiri [text]
 │ • ${prefix}foliokanan [text]
 │
 ├ *Islamic*
+│
 │ • ${prefix}listsurah
 │ • ${prefix}alquran
 │ • ${prefix}asmaulhusna
@@ -114,6 +119,7 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}jadwalsholat
 │
 ├ *For wibu*
+│
 │ • ${prefix}nami 
 │ • ${prefix}copper 
 │ • ${prefix}naruto  
@@ -140,6 +146,7 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}senku
 │
 ├ *Maker Ephoto360*
+│
 │ • ${prefix}wetglass
 │ • ${prefix}multicolor3d
 │ • ${prefix}watercolor
@@ -172,6 +179,7 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}freefire
 │
 ├ *Maker TextPro*
+│
 │ • ${prefix}blackpink
 │ • ${prefix}neon
 │ • ${prefix}greenneon
@@ -206,18 +214,23 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}thunder
 │
 ├ *Game*
+│
 │ • ${prefix}tebakgambar 
+│ • ${prefix}
+│ • ${prefix}
 │
 ├ *Anime search*
+│
 │ • ${prefix}character [anime]
-│ • ${prefix}anime [query]
-│ • ${prefix}manga [query]
-│ • ${prefix}kusonime [query]
-│ • ${prefix}kusonimesearch [query]
-│ • ${prefix}otakudesu [query]
-│ • ${prefix}otakudesusearch [query] 
+│ • ${prefix}anime [Query]
+│ • ${prefix}manga [Query]
+│ • ${prefix}kusonime [Query]
+│ • ${prefix}kusonimesearch [Query]
+│ • ${prefix}otakudesu [Query]
+│ • ${prefix}otakudesusearch [Query] 
 │
 ├ *Random text*
+│
 │ • ${prefix}pantun 
 │ • ${prefix}puisi 
 │ • ${prefix}bucinquote 
@@ -244,6 +257,7 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}trumpthink
 │
 ├ *Info*
+│
 │ • ${prefix}owner
 │ • ${prefix}daftar
 │
@@ -257,6 +271,7 @@ exports.menu = (prefix, salam, pushname) =>{
 │ •  => 
 │
 ├ *Group*
+│
 │ • ${prefix}sider [reply pesan bot]
 │ • ${prefix}listonline
 │ • ${prefix}delete [reply pesan bot]
@@ -267,6 +282,7 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}kick @tag
 │ • ${prefix}setdesc [text] 
 │ • ${prefix}setname [text] 
+│
 ╰─⬣
 `
 	}

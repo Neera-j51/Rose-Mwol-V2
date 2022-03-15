@@ -1,19 +1,20 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-// self or public
-global.self = false //jadiin true klo gk mau fitur bot lu di pke sama org lain
-global.anticall = false
-global.anti_delete = false
+// Self or Public
 
-// setting
-global.ownername ="Sachu-Settan"
-global.ownernumber = "62887435047326"
-global.botname = "Rose-Mwol-V2"
-global.thumbnail = fs.readFileSync("./settings/rose.jpg") //sesuaikan dengan nama foto
-global.background = "https://telegra.ph/file/d4c05638fa7886a1d8060.jpg"
-global.lolkey = 'e966d3aac613b61dabd35cc6' //register lolhuman.xyz klo mau apikey
-global.zenzkey = '8423e19c13' //register zenzapi.xyz klo mau apikey
+global.self = false // Private Bot Or Public
+global.anticall = false // Anti Call On Or Off
+global.anti_delete = false // Anti Delete On Or Off
+
+// Settings
+global.ownername ="Sachu-Settan" // Owner Name
+global.ownernumber = "919744933034" // Owner Number
+global.botname = "Rose-Mwol-V2" // Bot Name
+global.thumbnail = fs.readFileSync("./settings/rose.jpg") //bot photo
+global.background = "https://telegra.ph/file/d4c05638fa7886a1d8060.jpg" //Background Pic 
+global.lolkey = 'e966d3aac613b61dabd35cc6' // Register Api @lolhuman.xyz
+global.zenzkey = '8423e19c13' // Register  Api @zenzapi.xyz
 global.limit = {
 		free:20,
 		premium:1000

@@ -1,10 +1,8 @@
 /*
-# rose - UserBot
-# Copyright (C) 2022 rose-Bot Created By ZeeoneOfc
+# Rose-Mwol - UserBot
+# Copyright (C) 2022 rose-Mwol Created By Sachu-Settan
 #
-# This file is a part of < https://github.com/zeeone-ofc/rose/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/zeeone-ofc/rose/blob/v1/LICENSE/>.
+# This file is a part of < https://github.com/Sachu-Settan/Rose-Mwol-V2
 */ 
 
 // WhatsApp api
@@ -67,10 +65,10 @@ const tebakgambar = JSON.parse(fs.readFileSync('./database/game/tebakgambar.json
 
 /*
 # language
-# available now [ind]
+# available now [eng]
 */
-const  { ind } = require(`./help`)
-lang = ind 
+const  { eng } = require(`./help`)
+lang = eng 
 
 //times
 const time = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss z')
@@ -350,7 +348,7 @@ module.exports = rose = async (rose, mek) => {
 			if (tebakgambar.hasOwnProperty(sender.split('@')[0]) && !isCmd) {
                 jawaban = tebakgambar[sender.split('@')[0]]
                 if (budy.toLowerCase() == jawaban) {
-                    sendButMessage(from, "Selamat 😘 Jawaban kamu benar!", `• ${ownername}`, [{"buttonId": `.tebakgambar`,"buttonText": {"displayText": "Tebak Gambar"},"type": "RESPONSE"}], {quoted : mek})
+                    sendButMessage(from, "Selamat 😘 Jawaban kamu benar !", `• ${ownername}`, [{"buttonId": `.tebakgambar`,"buttonText": {"displayText": "Tebak Gambar"},"type": "RESPONSE"}], {quoted : mek})
                     delete tebakgambar[sender.split('@')[0]]
                     fs.writeFileSync("./database/game/tebakgambar.json", JSON.stringify(tebakgambar))
                 } else {
@@ -419,7 +417,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 				.on('error', function (err) {
 					console.log(`Error : ${err}`)
 					fs.unlinkSync(media)
-					reply('Eror')
+					reply('Error')
 					})
 			.on('end', function () {
 				console.log('Finish')
@@ -460,7 +458,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 					
              break
 					
-// download fix by zeeone
+// Download Fix by Sachu
 case 'ig': case 'igdl': 
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 	if (!q) return reply('Linknya?')
@@ -477,7 +475,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
                     rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `Instagram • ${i.type}`})                  
                 }
             }
-            }).catch((err) => reply(`🤲 Server eror`))
+            }).catch((err) => reply(`Server Error !!`))
             
              break
 case 'tiktok':
@@ -500,7 +498,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 					noweem = await getBuffer(nowm)
 					rose.sendMessage(from,noweem , MessageType.video, {mimetype: 'video/mp4',quoted: mek})
 					})
-				}).catch((err) => reply(`Link tidak valid`))
+				}).catch((err) => reply(`Link Not Valid`))
 			
              break 
 case 'tiktokwm':
@@ -518,7 +516,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 					weem = await getBuffer(wm)
 					rose.sendMessage(from,weem , MessageType.video, {mimetype: 'video/mp4',quoted: mek})
 					})
-				}).catch((err) => reply(`Link tidak valid`))
+				}).catch((err) => reply(`Link Not Valid`))
 			
              break 
 case 'tiktokmusic': case 'tiktokaudio':  
@@ -535,7 +533,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 					audnha = await getBuffer(audio)
 					rose.sendMessage(from,audnha , MessageType.document, {mimetype: 'audio/mpeg',filename: `Tiktok Music.mp3`,quoted: mek})
 					})
-				}).catch((err) => reply(`Link tidak valid`))
+				}).catch((err) => reply(`Link Not Valid`))
 			
              break
 case 'pinterest': 
@@ -743,8 +741,8 @@ case 'alquran':{
         arab = x.arab
         nomor = x.ayat
         latin = x.latin
-        indo = x.indonesia
-        ini_txt += `${arab}\n${nomor}. ${latin}\n${indo}\n\n`
+        engo = x.engonesia
+        ini_txt += `${arab}\n${nomor}. ${latin}\n${engo}\n\n`
     }
     ini_txt = ini_txt.replace(/<u>/g, "").replace(/<\/u>/g, "")
     ini_txt = ini_txt.replace(/<strong>/g, "").replace(/<\/strong>/g, "")
@@ -755,7 +753,7 @@ case 'asmaulhusna':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
     get_result = await fetchJson(`https://api.lolhuman.xyz/api/asmaulhusna?apikey=${lolkey}`)
     get_result = get_result.result
-    ini_txt = `No : ${get_result.index}\nLatin: ${get_result.latin}\nArab : ${get_result.ar}\nIndonesia : ${get_result.id}\nEnglish : ${get_result.en}`
+    ini_txt = `No : ${get_result.engex}\nLatin: ${get_result.latin}\nArab : ${get_result.ar}\nengonesia : ${get_result.id}\nEnglish : ${get_result.en}`
     reply(ini_txt)}
     break
 case 'kisahnabi':{
@@ -1077,7 +1075,7 @@ case 'nuliskiri':{
 									spawn('convert', [
 									'./database/media/nulis/images/buku/sebelumkiri.jpg',
 									'-font',
-									'./database/media/nulis/font/Indie-Flower.ttf',
+									'./database/media/nulis/font/engie-Flower.ttf',
 									'-size',
 									'960x1280',
 									'-pointsize',
@@ -1105,7 +1103,7 @@ case 'nuliskiri':{
 									spawn('convert', [
 									'./database/media/nulis/images/buku/sebelumkanan.jpg',
 									'-font',
-									'./database/media/nulis/font/Indie-Flower.ttf',
+									'./database/media/nulis/font/engie-Flower.ttf',
 									'-size',
 									'960x1280',
 									'-pointsize',
@@ -1133,7 +1131,7 @@ case 'nuliskiri':{
 									spawn('convert', [
 									'./media/nulis/images/folio/sebelumkiri.jpg',
 									'-font',
-									'./database/media/nulis/font/Indie-Flower.ttf',
+									'./database/media/nulis/font/engie-Flower.ttf',
 									'-size',
 									'1720x1280',
 									'-pointsize',
@@ -1161,7 +1159,7 @@ case 'nuliskiri':{
 									spawn('convert', [
 									'./database/media/nulis/images/folio/sebelumkanan.jpg',
 									'-font',
-									'./database/media/nulis/font/Indie-Flower.ttf',
+									'./database/media/nulis/font/engie-Flower.ttf',
 									'-size',
 									'960x1280',
 									'-pointsize',
@@ -1267,7 +1265,7 @@ reply(lang.wait())
 case 'ytmp3': {
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3* _Url YouTube_`)
-			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link tidak valid!')
+			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link Not Valid!')
 			var mulaikah = args.join(' ')
 			await reply(lang.wait())
                 zee.Youtube(mulaikah).then(async (data) => {
@@ -1285,7 +1283,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 case 'ytmp4': {
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3* _Url YouTube_`)
-			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link tidak valid!')
+			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link Not Valid!')
 			var mulaikah = args.join(' ')
 			zee.Youtube(mulaikah).then(async (data) => {
                     let txt = `*----「 YOUTUBE VIDEO 」----*\n\n`
@@ -1347,7 +1345,7 @@ case 'manga':{
                     break                     
 case 'kusonime':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://kusonime.com/nanatsu-no-taizai-bd-batch-subtitle-indonesia/`)
+                    if (args.length == 0) return reply(`Example: ${prefix + command} https://kusonime.com/nanatsu-no-taizai-bd-batch-subtitle-engonesia/`)
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/kusonime?apikey=${lolkey}&url=${ini_url}`)
                     get_result = get_result.result
@@ -1382,7 +1380,7 @@ case 'kusonimesearch':{
                     break
 case 'otakudesu':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://otakudesu.tv/lengkap/pslcns-sub-indo/`)
+                    if (args.length == 0) return reply(`Example: ${prefix + command} https://otakudesu.tv/lengkap/pslcns-sub-engo/`)
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesu?apikey=${lolkey}&url=${ini_url}`)
                     get_result = get_result.result
@@ -1529,7 +1527,7 @@ if (global.anti_delete === false) return
 global.anti_delete = false
 reply('✅ Anti delete berhasil di non aktifkan')
 } else if (!q) {
-sendButMessage(from, `MODE ANTI DELETE`, `Choose one`, [{buttonId: '.antidelete on',buttonText: {displayText: `On`,},type: 1,},{buttonId: '.antidelete off',buttonText: {displayText: `Off`,},type: 1,},]);}}
+sendButMessage(from, `ANTI DELETE MODE`, `Choose one`, [{buttonId: '.antidelete on',buttonText: {displayText: `On`,},type: 1,},{buttonId: '.antidelete off',buttonText: {displayText: `Off`,},type: 1,},]);}}
 break;
 case 'd':case 'del':case 'delete':{
 rose.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
@@ -1546,7 +1544,7 @@ if (global.anticall === false) return
 global.anticall = false
 reply('✅ Anti call berhasil di non aktifkan')
 } else if (!q) {
-sendButMessage(from, `MODE ANTI CALL`, `Choose one`, [{buttonId: '.anticall on',buttonText: {displayText: `On`,},type: 1,},{buttonId: '.anticall off',buttonText: {displayText: `Off`,},type: 1,},]);}}
+sendButMessage(from, `ANTI CALL MODE`, `Choose one`, [{buttonId: '.anticall on',buttonText: {displayText: `On`,},type: 1,},{buttonId: '.anticall off',buttonText: {displayText: `Off`,},type: 1,},]);}}
 break;
 case "listonline": {
         let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat;
@@ -1573,9 +1571,9 @@ case 'nami': case 'copper': case 'naruto':  case 'zoro': case 'ussop': case 'min
             {
 			try{	
             let txt = await fetchJson(`https://myselfff.herokuapp.com/docs/anime/${command}`)            
-            rose.sendMessage(from, await getBuffer(txt.result.list), MessageType.image, {caption: 'Wibu 👀', quoted: mek})            
+            rose.sendMessage(from, await getBuffer(txt.result.list), MessageType.image, {caption: '👀', quoted: mek})            
             } catch (e) {
-			m.reply('Server error')
+			m.reply('Server Error')
 			}}	    	    	
             break
  case 'sider':{
@@ -1613,7 +1611,7 @@ if (budy.startsWith('$')){
 if (!isOwner) return reply(lang.owner(botname))
 qur = budy.slice(2)
 exec(qur, (err, stdout) => {
-if (err) return reply(`roseBot :~ ${err}`)
+if (err) return reply(`Rose Bot :~ ${err}`)
 if (stdout) {
 reply(stdout)
 }

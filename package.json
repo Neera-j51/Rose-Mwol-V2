@@ -1,7 +1,7 @@
 {
   "name": "Rose-Mwol",
   "version": "5.0.0",
-  "description": "By Sachu-Settan",
+  "description": "Simple Whatsapp Bot By Sachu-Settan",
   "main": "rose.js",
   "directories": {
     "lib": "lib"
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node rose.js"
   },
-  "author": "ZEEONE",
+  "author": "Sachu-Settan",
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.3", 
     "awesome-phonenumber": "^2.64.0",
