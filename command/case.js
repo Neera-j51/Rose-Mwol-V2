@@ -4,7 +4,7 @@
 #
 # This file is a part of < https://github.com/Sachu-Settan/Rose-Mwol-V2
 */ 
-
+//eng
 // WhatsApp api
 require('../settings/config.js')
 const
@@ -71,8 +71,8 @@ const  { eng } = require(`./help`)
 lang = eng 
 
 //times
-const time = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss z')
-const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
+const time = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('HH:mm:ss z')
+const salam = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('a')
 
 
 module.exports = rose = async (rose, mek) => {
@@ -86,8 +86,8 @@ module.exports = rose = async (rose, mek) => {
 		const content = JSON.stringify(mek.message)
 		const from = mek.key.remoteJid
 		const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
-		const wita = moment(Date.now()).tz('Asia/Makassar').locale('id').format('HH:mm:ss z')
-		const wit = moment(Date.now()).tz('Asia/Jayapura').locale('id').format('HH:mm:ss z')
+		const wita = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('HH:mm:ss z')
+		const wit = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('HH:mm:ss z')
 		const type = Object.keys(mek.message)[0]        
 		const cmd = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase()
 		const prefix = /^[°•π÷×¶∆£¢€¥®™=|~!#$%^&.?/\\©^z+*@,;]/.test(cmd) ? cmd.match(/^[°•π÷×¶∆£¢€¥®™=|~!#$%^&.?/\\©^z+*,;]/gi) : '-'          	
@@ -689,7 +689,7 @@ case 'nhentaisearch':{
     ini_txt = "Result : \n"
     for (var x of get_result) {
         ini_txt += `Id : ${x.id}\n`
-        ini_txt += `Title English : ${x.title_english}\n`
+        ini_txt += `Title english : ${x.title_english}\n`
         ini_txt += `Title Japanese : ${x.title_japanese}\n`
         ini_txt += `Native : ${x.title_native}\n`
         ini_txt += `Upload : ${x.date_upload}\n`
@@ -1290,7 +1290,7 @@ case 'anime':{
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/anime?apikey=${lolkey}&query=${query}`)
                     get_result = get_result.result
-                    ini_txt = `Id : ${get_result.id}\nId MAL : ${get_result.idMal}\nTitle : ${get_result.title.romaji}\nEnglish : ${get_result.title.english}\nNative : ${get_result.title.native}\nFormat : ${get_result.format}\nEpisodes : ${get_result.episodes}\nDuration : ${get_result.duration} mins.\nStatus : ${get_result.status}\nSeason : ${get_result.season}\nSeason Year : ${get_result.seasonYear}\nSource : ${get_result.source}\nStart Date : ${get_result.startDate.day} - ${get_result.startDate.month} - ${get_result.startDate.year}\nEnd Date : ${get_result.endDate.day} - ${get_result.endDate.month} - ${get_result.endDate.year}\nGenre : ${get_result.genres.join(", ")}\nSynonyms : ${get_result.synonyms.join(", ")}\nScore : ${get_result.averageScore}%\nCharacters : \n`
+                    ini_txt = `Id : ${get_result.id}\nId MAL : ${get_result.idMal}\nTitle : ${get_result.title.romaji}\nenglish : ${get_result.title.english}\nNative : ${get_result.title.native}\nFormat : ${get_result.format}\nEpisodes : ${get_result.episodes}\nDuration : ${get_result.duration} mins.\nStatus : ${get_result.status}\nSeason : ${get_result.season}\nSeason Year : ${get_result.seasonYear}\nSource : ${get_result.source}\nStart Date : ${get_result.startDate.day} - ${get_result.startDate.month} - ${get_result.startDate.year}\nEnd Date : ${get_result.endDate.day} - ${get_result.endDate.month} - ${get_result.endDate.year}\nGenre : ${get_result.genres.join(", ")}\nSynonyms : ${get_result.synonyms.join(", ")}\nScore : ${get_result.averageScore}%\nCharacters : \n`
                     ini_character = get_result.characters.nodes
                     for (var x of ini_character) {
                         ini_txt += `- ${x.name.full} (${x.name.native})\n`
@@ -1305,7 +1305,7 @@ case 'manga':{
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/manga?apikey=${lolkey}&query=${query}`)
                     get_result = get_result.result
-                    ini_txt = `Id : ${get_result.id}\nId MAL : ${get_result.idMal}\nTitle : ${get_result.title.romaji}\nEnglish : ${get_result.title.english}\nNative : ${get_result.title.native}\nFormat : ${get_result.format}\nChapters : ${get_result.chapters}\nVolume : ${get_result.volumes}\nStatus : ${get_result.status}\nSource : ${get_result.source}\nStart Date : ${get_result.startDate.day} - ${get_result.startDate.month} - ${get_result.startDate.year}\nEnd Date : ${get_result.endDate.day} - ${get_result.endDate.month} - ${get_result.endDate.year}\nGenre : ${get_result.genres.join(", ")}\nSynonyms : ${get_result.synonyms.join(", ")}\nScore : ${get_result.averageScore}%\nCharacters : \n`
+                    ini_txt = `Id : ${get_result.id}\nId MAL : ${get_result.idMal}\nTitle : ${get_result.title.romaji}\nenglish : ${get_result.title.english}\nNative : ${get_result.title.native}\nFormat : ${get_result.format}\nChapters : ${get_result.chapters}\nVolume : ${get_result.volumes}\nStatus : ${get_result.status}\nSource : ${get_result.source}\nStart Date : ${get_result.startDate.day} - ${get_result.startDate.month} - ${get_result.startDate.year}\nEnd Date : ${get_result.endDate.day} - ${get_result.endDate.month} - ${get_result.endDate.year}\nGenre : ${get_result.genres.join(", ")}\nSynonyms : ${get_result.synonyms.join(", ")}\nScore : ${get_result.averageScore}%\nCharacters : \n`
                     ini_character = get_result.characters.nodes
                     for (var x of ini_character) {
                         ini_txt += `- ${x.name.full} (${x.name.native})\n`
@@ -1316,7 +1316,7 @@ case 'manga':{
                     break                     
 case 'kusonime':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://kusonime.com/nanatsu-no-taizai-bd-batch-subtitle-engonesia/`)
+                    if (args.length == 0) return reply(`Example: ${prefix + command} https://kusonime.com/nanatsu-no-taizai-bd-batch-subtitle-indonesia/`)
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/kusonime?apikey=${lolkey}&url=${ini_url}`)
                     get_result = get_result.result
@@ -1351,7 +1351,7 @@ case 'kusonimesearch':{
                     break
 case 'otakudesu':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://otakudesu.tv/lengkap/pslcns-sub-engo/`)
+                    if (args.length == 0) return reply(`Example: ${prefix + command} https://otakudesu.tv/lengkap/pslcns-sub-indo/`)
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesu?apikey=${lolkey}&url=${ini_url}`)
                     get_result = get_result.result
