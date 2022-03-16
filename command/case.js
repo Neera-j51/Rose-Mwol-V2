@@ -5,11 +5,11 @@
 # This file is a part of < https://github.com/Sachu-Settan/Rose-Mwol-V2
 */ 
 //eng
-// WhatsApp api
 require('../settings/config.js')
 const
 	{
-		WAConnection: _WAConnection,
+		WAConnection: 
+		_WAConnection,
 		MessageType,
 		Presence,
 		MessageOptions,
@@ -378,15 +378,15 @@ module.exports = rose = async (rose, mek) => {
 //Remember don't just leave it blank, your sc will get an error
 switch (command) {
 case 'menu': case 'help': case 'rose':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 				sendButLocation(from, lang.menu(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
 				break
 case 'infobot':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			reply('Update bot selanjutnya silahkan cek YouTube zeeone ofc')
 break
 case 'owner':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 		const ownerContact = [ownernumber, "", "", "", "", "", "", "", "", "", "" , "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 		let ini_list = []
 		for (let i of ownerContact.map(v => v + '@s.whatsapp.net')) {
@@ -404,7 +404,7 @@ case 'owner':{
 				}
 			break
 case 'sticker':case 'stiker':case 'stickergif':case 'stikergif':case 'sgif':case 's':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 			const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 			const media = await rose.downloadAndSaveMediaMessage(encmedia)
@@ -460,8 +460,8 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 					
 // Download Fix by Sachu
 case 'ig': case 'insta': case 'instagram': case 'igdl': 
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-	if (!q) return reply('Linknya?')
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+	if (!q) return reply('*Where Is Link ?*')
 	if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.errorLink)
 	let urlnya = q
 	zee.Igdl(urlnya)
@@ -479,13 +479,13 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
             
              break
 case 'tiktok':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', '© ' + ownername, thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
 						
              break
 case 'tiktoknowm':   
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-			if (!q) return reply('Linknya?')
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+			if (!q) return reply('*Where Is Link ?*')
 			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
 			reply(lang.wait())
 			let nowem = q
@@ -498,12 +498,12 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 					noweem = await getBuffer(nowm)
 					rose.sendMessage(from,noweem , MessageType.video, {mimetype: 'video/mp4',quoted: mek})
 					})
-				}).catch((err) => reply(`Link Not Valid`))
+				}).catch((err) => reply(`Link Not Valid !!`))
 			
              break 
 case 'tiktokwm':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-			if (!q) return reply('Linknya?')
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+			if (!q) return reply('*Where Is Link ?*')
 			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
 			reply(lang.wait())
 			let wem = args.join(' ')
@@ -520,8 +520,8 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 			
              break 
 case 'tiktokmusic': case 'tiktokaudio':  
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-			if (!q) return reply('Linknya?')
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+			if (!q) return reply('*Where Is Link ?*')
 			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid Link')
 			reply(lang.wait())
 			let audi = q
@@ -537,7 +537,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 			
              break
 case 'pinterest': 
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if(!q) return reply('Masukkan query')
             async function pinterestSearch(query) {
                     return new Promise((resolve, reject) => {
@@ -590,7 +590,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
                 
              break
 case 'play': case 'song':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu_`)
 			var srch = args.join(' ')
 			aramas = await yts(srch);
@@ -617,7 +617,7 @@ sendButLocation(from, captions, '© ' + ownername, thumbyt, [{buttonId: `.ytmp4 
 			
              break
 case 'spotify':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
     url = args[0]
     get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=${lolkey}&url=${url}`)
@@ -634,7 +634,7 @@ case 'spotify':{
     }
     break
 case 'spotifysearch':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
     query = args.join(" ")
     get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotifysearch?apikey=${lolkey}&query=${query}`)
@@ -650,7 +650,7 @@ case 'spotifysearch':{
     reply(ini_txt)}
     break
 case 'nhentai':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
     henid = args[0]
     get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${lolkey}`)
@@ -671,7 +671,7 @@ case 'nhentai':{
     reply(ini_txt)}
     break
  case 'nhentaipdf':{
- 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+ 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
     henid = args[0]
     get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${lolkey}`)
@@ -681,7 +681,7 @@ case 'nhentai':{
     }
     break
 case 'nhentaisearch':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
     query = args.join(" ")
     get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaisearch?apikey=${lolkey}&query=${query}`)
@@ -701,25 +701,16 @@ case 'nhentaisearch':{
     break
 //maker ephoto
 case 'wetglass':case 'multicolor3d':case 'watercolor':case 'luxurygold':case 'galaxywallpaper':case 'lighttext':case 'beautifulflower':case 'puppycute':case 'royaltext':case 'heartshaped':case 'birthdaycake':case 'galaxystyle':case 'hologram3d':case 'greenneon':case 'glossychrome':case 'greenbush':case 'metallogo':case 'noeltext':case 'glittergold':case 'textcake':case 'starsnight':case 'wooden3d':case 'textbyname':case 'writegalacy':case 'galaxybat':case 'snow3d':case 'birthdayday':case 'goldplaybutton':case 'silverplaybutton':case 'freefire':{
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} rose`)
     ini_txt = args.join(" ")
     var po = await getBuffer(`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=${lolkey}&text=${ini_txt}`)
     rose.sendMessage(from, po, image, { quoted: mek, caption: "Selesai" })
     }
     break
-//maker textpro
-case 'blackpink':case 'neon':case 'greenneon':case 'advanceglow':case 'futureneon':case 'sandwriting':case 'sandsummer':case 'sandengraved':case 'metaldark':case 'neonlight':case 'holographic':case 'text1917':case 'minion':case 'deluxesilver':case 'newyearcard':case 'bloodfrosted':case 'halloween':case 'jokerlogo':case 'fireworksparkle':case 'natureleaves':case 'bokeh':case 'toxic':case 'strawberry':case 'box3d':case 'roadwarning':case 'breakwall':case 'icecold':case 'luxury':case 'cloud':case 'summersand':case 'horrorblood':case 'thunder':{
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} rose`)
-    ini_txt = args.join(" ")
-    let gambar = await getBuffer(`https://api.lolhuman.xyz/api/textprome/${command}?apikey=${lolkey}&text=${ini_txt}`)
-    rose.sendMessage(from, gambar, image, { quoted: mek, caption: "Sukses" })
-    }
-    break
 
 //group
-case 'daftar': case 'reg': case 'register': case 'verify': case 'verif':
+case 'register': case 'reg': case 'register': case 'verify': case 'verif':
 			if (isrose) return  reply(lang.regis())
 			try {
 					ppregis = await rose.getProfilePicture(sender)
@@ -728,10 +719,10 @@ case 'daftar': case 'reg': case 'register': case 'verify': case 'verif':
 				}
 			const serialUser = createSerial(20)
 			await addRegisteredUser(sender.split('@')[0] + '@s.whatsapp.net', pushname, time, serialUser)
-			await sendButImage(from, lang.daftar(sender, pushname, time, serialUser, _registered), `© ${botname}`,await getBuffer(ppregis), [{buttonId: '.menu',buttonText: {displayText: `MENU`,},type: 1,}], {thumbnail: Buffer.alloc(0), quoted : mek})
+			await sendButImage(from, lang.register(sender, pushname, time, serialUser, _registered), `© ${botname}`,await getBuffer(ppregis), [{buttonId: '.menu',buttonText: {displayText: `MENU`,},type: 1,}], {thumbnail: Buffer.alloc(0), quoted : mek})
 break
 case 'antilink':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
@@ -799,7 +790,7 @@ case 'leave':
 			}, 0)
 			break
 case 'hidetag':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			var value = q
@@ -817,14 +808,14 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 			rose.sendMessage(from, options, text)
 			break
 case 'linkgrup':case 'linkgroup': case 'linkgc':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			linkgc = await rose.groupInviteCode(from)
 			yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
 			rose.sendMessage(from, yeh, text, { quoted: mek })
 			break  
 case 'tagall':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			members_id = []
@@ -837,7 +828,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 			mentions(taga, members_id, true)
 			break 
 case 'setname':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
@@ -845,7 +836,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 					rose.sendMessage(from, `Sukses Mengubah Nama Grup Menjadi ${q}`, text, { quoted: mek })
 			break          
 case 'setdesc': case 'setdesk':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
@@ -853,7 +844,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 					rose.sendMessage(from, `Sukses Mengubah Desk Grup Menjadi ${q}`, text, { quoted: mek })
 			break   
 case 'kick':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
@@ -1150,7 +1141,7 @@ case 'nuliskiri':{
 									}
 									break
 									case 'facebook': case 'fb': case 'fbdl': case 'facebookdl':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 if(!q)return reply(`Example : ${prefix + command} link Facebook`)
                 if (!q.includes('facebook.com') && !q.includes('fb.watch')) return reply('Itu bukan link Facebook')
                 await reply(lang.wait())
@@ -1170,7 +1161,7 @@ try{
    }          
              break
    case 'soundcloud':
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 if(!q)return reply(`Example : ${prefix + command} link SoundCloud`)
                 if (!q.includes('m.soundcloud.com')) return reply('Itu bukan link SoundCloud')
                 await reply(lang.wait())
@@ -1188,7 +1179,7 @@ try{
 				})
 			break
 	case 'telesticker': case 'tstiker': {
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!q) return reply(`Contoh: ${prefix + command} *https://t.me/addstickers/geestickerpack*`)
 			if (!q.includes('t.me')) return reply('Bukan link telegram stiker')
@@ -1200,7 +1191,7 @@ try{
 		}
 		break
 case 'tebakgambar':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 if (tebakgambar.hasOwnProperty(sender.split('@')[0])) return reply("Masih ada permainan yang sedang berlangsung")
 hx.tebakgambar().then(async data =>{
@@ -1219,7 +1210,7 @@ fs.writeFileSync("./database/game/tebakgambar.json", JSON.stringify(tebakgambar)
                     })
 					break   
 case 'semoji': case'emoji':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 if (!q) return reply('emojinya?')
 					qes = args.join(' ')
@@ -1234,7 +1225,7 @@ reply(lang.wait())
 		
 		break
 case 'ytmp3': {
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3* _Url YouTube_`)
 			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link Not Valid!')
 			var mulaikah = args.join(' ')
@@ -1252,7 +1243,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
                 }
              break
 case 'ytmp4': {
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3* _Url YouTube_`)
 			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link Not Valid!')
 			var mulaikah = args.join(' ')
@@ -1270,7 +1261,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
              break    
 //anime search
 case 'character':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                     if (args.length == 0) return reply(`Example: ${prefix + command} Sakura`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/character?apikey=${lolkey}&query=${query}`)
@@ -1285,7 +1276,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
                     await rose.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     break
 case 'anime':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                     if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/anime?apikey=${lolkey}&query=${query}`)
@@ -1300,7 +1291,7 @@ case 'anime':{
                     await rose.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })}
                     break
 case 'manga':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                     if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/manga?apikey=${lolkey}&query=${query}`)
@@ -1315,7 +1306,7 @@ case 'manga':{
                     await rose.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })}
                     break                     
 case 'kusonime':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://kusonime.com/nanatsu-no-taizai-bd-batch-subtitle-indonesia/`)
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/kusonime?apikey=${lolkey}&url=${ini_url}`)
@@ -1332,7 +1323,7 @@ case 'kusonime':{
                     await rose.sendMessage(from, ini_buffer, image, { quoted: mek, caption: ini_txt })}
                     break
 case 'kusonimesearch':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                     if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/kusonimesearch?apikey=${lolkey}&query=${query}`)
@@ -1350,7 +1341,7 @@ case 'kusonimesearch':{
                     }
                     break
 case 'otakudesu':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://otakudesu.tv/lengkap/pslcns-sub-indo/`)
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesu?apikey=${lolkey}&url=${ini_url}`)
@@ -1373,7 +1364,7 @@ case 'otakudesu':{
                     reply(ini_txt)}
                     break
 case 'otakudesusearch':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                     if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesusearch?apikey=${lolkey}&query=${query}`)
@@ -1396,93 +1387,87 @@ case 'otakudesusearch':{
                     reply(ini_txt)}
                     break
 //random text
-case 'pantun': case 'puisi': case 'bucinquote': case 'dilanquote': case 'katasenja': case 'motivasi':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+case 'pantun': case 'puisi': case 'bucinquote': case 'dilanquote': case 'katasenja': case 'motivational':{
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/${command}?apikey=${zenzkey}`)
 	reply(txt.result.message)
 	}
 	break
 case 'randomquote':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/random/quote?apikey=${zenzkey}`)
 	reply(txt.result.message)
 	}
 	break
-case 'quotemuslim':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-	let txt = await fetchJson(`https://zenzapi.xyz/api/randomquote/muslim?apikey=${zenzkey}`)
-	reply(txt.result.message)
-	}
-	break
 case 'quotesgalau':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/quotes/galau?apikey=${zenzkey}`)
 	reply(txt.result.message)
 	}
 	break
 case 'creepyfact':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/creepyfact?apikey=${zenzkey}`)
 	reply(txt.result.message)
 	}
 	break
 case 'cerpen':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/cerpen?apikey=${zenzkey}`)
 	reply('Judul : ' + txt.result.Judul + '\n' + 'Penulis : ' + txt.result.Penulis + '\n' + 'Sumber : ' + txt.result.sumber + '\n' + 'Cerita : ' + txt.result.cerita)
 	}
 	break
 case 'cersex':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/cersex?apikey=${zenzkey}`)
 	reply('Judul : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita)
 	}
 	break
 case 'cersex2':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/cersex2?apikey=${zenzkey}`)
 	rose.sendMessage(from, await getBuffer(txt.result.Thumb), MessageType.image,{quoted: mek, caption: 'Judul : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita})
 	}
 	break
 case 'huluh': case 'hilih': case 'heleh' : case 'halah': case 'reversetext':{
 	if (args.length == 0) return reply(`Example: ${prefix + command} rose`)
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/${command}?query=${q}&apikey=${zenzkey}`)
 	reply(txt.result)
 	}
 	break
 case 'cercreepy':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fecthJson(`https://zenzapi.xyz/api/cercreepy?apikey=${zenzkey}`)
 	reply('Judul : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita)
 	}
 	break
 case 'faktaunik':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/faktaunik?apikey=${zenzkey}`)
 	reply(txt.result)
 	}
 	break
 case 'quotetrump':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/trumpquotes?apikey=${zenzkey}`)
 	reply('En : ' + txt.result.en + '\n' + 'Id : ' + txt.result.id)
 	}
 	break
 case 'animequote':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/animequotes?apikey=${zenzkey}`)
 	reply('Anime : ' + txt.result.anime + '\n' + 'Karakter : ' + txt.result.character + '\n' + 'En : ' + txt.result.en + '\n' + 'Id : ' + txt.result.id)
 	}
 	break
 case 'animequote2':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/animequotes2?apikey=${zenzkey}`)
 	rose.sendMessage(from, await getBuffer(txt.result.thumb), MessageType.image, {quoted: mek, caption: 'Anime : ' + txt.result.anime + '\n' + 'Karakter : ' + txt.result.character + '\n' + 'Episode : ' + txt.result.episode + '\n' + 'Quotes : ' + txt.result.quotes})
 	}
 	break
 case 'trumpthink':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/trumpthink?apikey=${zenzkey}`)
 	reply('En : ' + txt.result.en + '\n' + 'Id : ' + txt.result.id)
 	}
@@ -1555,7 +1540,7 @@ tagg = []
 teks = `Telah Dibaca Oleh :\n\n`
 for(let i of infom.reads){
 teks += shape+' ' + '@' + i.jid.split('@')[0] + '\n'
-teks += `> Waktu : ` + moment(`${i.t}` * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss') + '\n\n'
+teks += `> Waktu : ` + moment(`${i.t}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss') + '\n\n'
 tagg.push(i.jid)
 }
 mentions(teks, tagg, true)

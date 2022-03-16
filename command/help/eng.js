@@ -13,7 +13,7 @@ exports.noregis = (pushname) =>{
 exports.regis = () =>{
 	return` You Have Registered 😒`
 	}
-exports.daftar = (sender, pushname, time, serialUser, totalUser) =>{
+exports.register = (sender, pushname, time, serialUser, totalUser) =>{
 		return` *SUCCESSFUL REGISTRATION*
 
 • Name : ${pushname}
@@ -174,41 +174,6 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}silverplaybutton
 │ • ${prefix}freefire
 │
-├ *Maker TextPro*
-│
-│ • ${prefix}blackpink
-│ • ${prefix}neon
-│ • ${prefix}greenneon
-│ • ${prefix}advanceglow
-│ • ${prefix}futureneon
-│ • ${prefix}sandwriting
-│ • ${prefix}sandsummer
-│ • ${prefix}sandengraved
-│ • ${prefix}metaldark
-│ • ${prefix}neonlight
-│ • ${prefix}holographic
-│ • ${prefix}text1917
-│ • ${prefix}minion
-│ • ${prefix}deluxesilver
-│ • ${prefix}newyearcard
-│ • ${prefix}bloodfrosted
-│ • ${prefix}halloween
-│ • ${prefix}jokerlogo
-│ • ${prefix}fireworksparkle
-│ • ${prefix}natureleaves
-│ • ${prefix}bokeh
-│ • ${prefix}toxic
-│ • ${prefix}strawberry
-│ • ${prefix}box3d
-│ • ${prefix}roadwarning
-│ • ${prefix}breakwall
-│ • ${prefix}icecold
-│ • ${prefix}luxury
-│ • ${prefix}cloud
-│ • ${prefix}summersand
-│ • ${prefix}horrorblood
-│ • ${prefix}thunder
-│
 ├ *Game*
 │
 │ • ${prefix}tebakgambar 
@@ -230,9 +195,8 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}bucinquote 
 │ • ${prefix}dilanquote 
 │ • ${prefix}katasenja 
-│ • ${prefix}motivasi
+│ • ${prefix}motivational
 │ • ${prefix}randomquote
-│ • ${prefix}quotemuslim
 │ • ${prefix}quotesgalau
 │ • ${prefix}creepyfact
 │ • ${prefix}cerpen
@@ -253,7 +217,7 @@ exports.menu = (prefix, salam, pushname) =>{
 ├ *Info*
 │
 │ • ${prefix}owner
-│ • ${prefix}daftar
+│ • ${prefix}register
 │
 ├ *Owner*
 │
