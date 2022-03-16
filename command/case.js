@@ -375,7 +375,7 @@ module.exports = rose = async (rose, mek) => {
 		}
 		
 		if (!mek.key.fromMe && global.self === true) return
-//colong aja bang, ingat jgn asal colong ntr sc lu error
+//Remember don't just leave it blank, your sc will get an error
 switch (command) {
 case 'menu': case 'help': case 'rose':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
@@ -459,7 +459,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
              break
 					
 // Download Fix by Sachu
-case 'ig': case 'igdl': 
+case 'ig': case 'insta': case 'instagram'case 'igdl': 
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 	if (!q) return reply('Linknya?')
 	if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.errorLink)
@@ -717,74 +717,9 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
     rose.sendMessage(from, gambar, image, { quoted: mek, caption: "Sukses" })
     }
     break
-//islami
-case 'listsurah':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    get = await fetchJson(`https://api.lolhuman.xyz/api/quran?apikey=${lolkey}`)
-    get_result = get.result
-    ini_txt = 'List Surah:\n'
-    for (var x in get_result) {
-        ini_txt += `${x}. ${get_result[x]}\n`
-    }
-    reply(ini_txt)
-    }
-    break
-case 'alquran':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    if (args.length < 1) return reply(`Example: ${prefix + command} 18 or ${prefix + command} 18/10 or ${prefix + command} 18/1-10`)
-    urls = `https://api.lolhuman.xyz/api/quran/${args[0]}?apikey=${lolkey}`
-    quran = await fetchJson(urls)
-    result = quran.result
-    ayat = result.ayat
-    ini_txt = `QS. ${result.surah} : 1-${ayat.length}\n\n`
-    for (var x of ayat) {
-        arab = x.arab
-        nomor = x.ayat
-        latin = x.latin
-        engo = x.engonesia
-        ini_txt += `${arab}\n${nomor}. ${latin}\n${engo}\n\n`
-    }
-    ini_txt = ini_txt.replace(/<u>/g, "").replace(/<\/u>/g, "")
-    ini_txt = ini_txt.replace(/<strong>/g, "").replace(/<\/strong>/g, "")
-    ini_txt = ini_txt.replace(/<u>/g, "").replace(/<\/u>/g, "")
-    reply(ini_txt)}
-    break
-case 'asmaulhusna':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/asmaulhusna?apikey=${lolkey}`)
-    get_result = get_result.result
-    ini_txt = `No : ${get_result.engex}\nLatin: ${get_result.latin}\nArab : ${get_result.ar}\nengonesia : ${get_result.id}\nEnglish : ${get_result.en}`
-    reply(ini_txt)}
-    break
-case 'kisahnabi':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} Muhammad`)
-    query = args.join(" ")
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/kisahnabi/${query}?apikey=${lolkey}`)
-    get_result = get_result.result
-    ini_txt = `Name : ${get_result.name}\nLahir : ${get_result.thn_kelahiran}\nUmur : ${get_result.age}\nTempat : ${get_result.place}\nStory : \n${get_result.story}`
-    reply(ini_txt)}
-    break
-case 'alquranaudio':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} 18 or ${prefix + command} 18/10`)
-    surah = args[0]
-    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/quran/audio/${surah}?apikey=${lolkey}`)
-    await rose.sendMessage(from, ini_buffer, audio, { quoted: mek, mimetype: 'audio/mpeg' })
-    }
-    break
-case 'jadwalsholat':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} Yogyakarta`)
-    daerah = args.join(" ")
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/sholat/${daerah}?apikey=${lolkey}`)
-    get_result = get_result.result
-    ini_txt = `Wilayah : ${get_result.wilayah}\nTanggal : ${get_result.tanggal}\nSahur : ${get_result.sahur}\nImsak : ${get_result.imsak}\nSubuh : ${get_result.subuh}\nTerbit : ${get_result.terbit}\nDhuha : ${get_result.dhuha}\nDzuhur : ${get_result.dzuhur}\nAshar : ${get_result.ashar}\nMaghrib : ${get_result.imsak}\nIsya : ${get_result.isya}`
-    reply(ini_txt)}
-    break
 
 //group
-case 'daftar': case 'verify': case 'verif':
+case 'daftar': case 'reg': case 'register': case 'verify': case 'verif':
 			if (isrose) return  reply(lang.regis())
 			try {
 					ppregis = await rose.getProfilePicture(sender)
@@ -860,7 +795,7 @@ case 'leave':
 			rose.groupLeave(from) 
 			}, 2000)
 			setTimeout( () => {
-			rose.sendMessage(from, 'Sayonara👋', text)
+			rose.sendMessage(from, 'Bye 👋', text)
 			}, 0)
 			break
 case 'hidetag':
@@ -963,6 +898,42 @@ case 'bass': {
 									media = await rose.downloadAndSaveMediaMessage(encmedia)
 									ran = getRandom('.mp3')
 									exec(`ffmpeg -i ${media} -af equalizer=f=94:width_type=o:width=2:g=30 ${ran}`, (err, stderr, stdout) => {
+										fs.unlinkSync(media)
+										if (err) return reply('Error!')
+										hah = fs.readFileSync(ran)
+										rose.sendMessage(from, hah, audio, {mimetype: 'audio/mpeg', ptt:true, quoted: mek, duration:99999999999999999999999})
+										fs.unlinkSync(ran)
+										})}
+										break
+case 'reverse': {
+									encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+									media = await rose.downloadAndSaveMediaMessage(encmedia)
+									ran = getRandom('.mp3')
+									exec(`ffmpeg -i ${media} -filter_complex "areverse" ${ran}`, (err, stderr, stdout) => {
+										fs.unlinkSync(media)
+										if (err) return reply('Error!')
+										hah = fs.readFileSync(ran)
+										rose.sendMessage(from, hah, audio, {mimetype: 'audio/mpeg', ptt:true, quoted: mek, duration:99999999999999999999999})
+										fs.unlinkSync(ran)
+										})}
+										break
+case 'smooth': {
+									encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+									media = await rose.downloadAndSaveMediaMessage(encmedia)
+									ran = getRandom('.mp3')
+									exec(`ffmpeg -i ${media} -filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'" ${ran}`, (err, stderr, stdout) => {
+										fs.unlinkSync(media)
+										if (err) return reply('Error!')
+										hah = fs.readFileSync(ran)
+										rose.sendMessage(from, hah, audio, {mimetype: 'audio/mpeg', ptt:true, quoted: mek, duration:99999999999999999999999})
+										fs.unlinkSync(ran)
+										})}
+										break    
+case 'earrape': {
+									encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+									media = await rose.downloadAndSaveMediaMessage(encmedia)
+									ran = getRandom('.mp3')
+									exec(`ffmpeg -i ${media} -af volume=12 ${ran}`, (err, stderr, stdout) => {
 										fs.unlinkSync(media)
 										if (err) return reply('Error!')
 										hah = fs.readFileSync(ran)
