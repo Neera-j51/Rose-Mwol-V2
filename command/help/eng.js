@@ -8,60 +8,60 @@ exports.limitend = (pushname) => {
 	return`Maaf ${pushname} limit hari ini telah habis\nlimit di reset setiap jam 24:00`
 }
 exports.noregis = (pushname) =>{
-	return` 🙅‍♀️ Halo ${pushname} lu belum daftar. Ketik .daftar dulu`
+	return` 🙅‍♀️ Hi ${pushname} You Haven't Registered Yet. Type .register First`
 	}
 exports.regis = () =>{
-	return` Lu udah daftar 😒`
+	return` You Have Registered 😒`
 	}
 exports.daftar = (sender, pushname, time, serialUser, totalUser) =>{
-	return` *PENDAFTARAN BERHASIL*
+		return` *SUCCESSFUL REGISTRATION*
 
-• Nama : ${pushname}
-• Nomor : ${sender.split("@")[0]}
-• Waktu : ${time}
+• Name : ${pushname}
+• Number : ${sender.split("@")[0]}
+• Time : ${time}
 • Serial : ${serialUser}
 
-Thanks yak udah daftar, sekarang ketik .menu untuk melihat 
-fitur bot.
+Thanks, I've registered,
+Now Type .menu to view Rose-Mwol features.
 `
 	}
 exports.owner = (botname) =>{
-	return` 🙅‍♀️ Command khusus owner ${botname}`
+	return` 🙅‍♀️ Owner's special command ${botname}`
 	}
 exports.admin = (groupName) =>{
-	return`🙅‍♀️ Command khusus admin ${groupName}`
+	return`🙅‍♀️ Admin special commands ${groupName}`
 	}
 exports.adminB = () =>{
-	return`⚠️ Make Bot As Admin`
+	return`⚠️ Bots are not group admins`
 	}
 exports.err = () =>{
-	return`⚠️ Fitur ini sedang eror !`
+	return`⚠️ This feature is in error !`
 	}
 exports.group = () =>{
 	return`🙅‍♀️ Command khusus di dalam group`
 	}
 
 exports.wait = () =>{
-	return`_*⏳ Please Wait ~ *_`
+	return`⏳ Being processed ~`
 	}
 exports.ok = () =>{
-	return` ✅ Oke done ~`
+	return` ✅ Ok Done ~`
 	}
 exports.welcome = () =>{
-	return`Jangan Lupa Intro Ya~
+	return`Don't forget the intro ~
 ⌯ָ   ֙ Name :
 ⌯ָ   ֙ Age :
 ⌯ָ   ֙ Kelamin :
 ⌯ָ   ֙ Askot :
-╰─ ᝬ _Group Rules_  >_<`
+╰─ ᝬ _Obey The Group Rules_  >_<`
       }
 exports.leave = () =>{
 	return`
 │
-╰─ ᝬ _Balik Lagi Wajib Donasi Ya_ >_<`
+╰─ ᝬ _Back Again Required Donation Yes_ >_<`
 }
 exports.menu = (prefix, salam, pushname) =>{
-	return`Hi ${pushname}, Good ${salam}
+	return`Hi ${pushname}, selamat ${salam}
 
 ╭─⬣ *List Menu*
 │
@@ -71,9 +71,9 @@ exports.menu = (prefix, salam, pushname) =>{
 │
 ├ *Download*
 │
-│ • ${prefix}play [Query]
-│ • ${prefix}song [Query]
-│ • ${prefix}pinterest [Query]
+│ • ${prefix}play [query]
+│ • ${prefix}song [judul lagu]
+│ • ${prefix}pinterest [query]
 │ • ${prefix}ytmp3 [url]
 │ • ${prefix}ytmp4 [url]
 │ • ${prefix}tiktok [url]
@@ -83,17 +83,20 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}soundcloud [url]
 │ • ${prefix}telesticker [url]
 │ • ${prefix}spotify [url]
-│ • ${prefix}spotifysearch [Query]
+│ • ${prefix}spotifysearch [query]
 │ • ${prefix}nhentai [code]
 │ • ${prefix}nhentaipdf [code]
-│ • ${prefix}nhentaisearch [Query]
+│ • ${prefix}nhentaisearch [query]
 │
 ├ *Convert*
 │
 │ • ${prefix}stiker [video/image]
-│ • ${prefix}semoji 
+│ • ${prefix}semoji 😎
 │ • ${prefix}smeme [text]
 │ • ${prefix}memegen [text|text2]
+│
+├ *Voice Changer*
+│
 │ • ${prefix}fast [video/vn]
 │ • ${prefix}tupai [video/vn]
 │ • ${prefix}vibra [video/vn]
@@ -101,6 +104,8 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}slow [video/vn]
 │ • ${prefix}bass [video/vn]
 │ • ${prefix}nightcore [video/vn]
+│ • ${prefix}smooth [video/vn]
+│ • ${prefix}earrape [video/vn]
 │
 ├ *Education*
 │
@@ -108,15 +113,6 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}nuliskanan [text]
 │ • ${prefix}foliokiri [text]
 │ • ${prefix}foliokanan [text]
-│
-├ *Islamic*
-│
-│ • ${prefix}listsurah
-│ • ${prefix}alquran
-│ • ${prefix}asmaulhusna
-│ • ${prefix}kisahnabi
-│ • ${prefix}alquranaudio
-│ • ${prefix}jadwalsholat
 │
 ├ *For wibu*
 │
@@ -216,18 +212,16 @@ exports.menu = (prefix, salam, pushname) =>{
 ├ *Game*
 │
 │ • ${prefix}tebakgambar 
-│ • ${prefix}
-│ • ${prefix}
 │
 ├ *Anime search*
 │
 │ • ${prefix}character [anime]
-│ • ${prefix}anime [Query]
-│ • ${prefix}manga [Query]
-│ • ${prefix}kusonime [Query]
-│ • ${prefix}kusonimesearch [Query]
-│ • ${prefix}otakudesu [Query]
-│ • ${prefix}otakudesusearch [Query] 
+│ • ${prefix}anime [query]
+│ • ${prefix}manga [query]
+│ • ${prefix}kusonime [query]
+│ • ${prefix}kusonimesearch [query]
+│ • ${prefix}otakudesu [query]
+│ • ${prefix}otakudesusearch [query] 
 │
 ├ *Random text*
 │
@@ -262,6 +256,7 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}daftar
 │
 ├ *Owner*
+│
 │ • ${prefix}broadcast [text]
 │ • ${prefix}leave
 │ • ${prefix}antidelete [on/off]
@@ -282,7 +277,6 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}kick @tag
 │ • ${prefix}setdesc [text] 
 │ • ${prefix}setname [text] 
-│
 ╰─⬣
 `
 	}
