@@ -459,7 +459,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
              break
 					
 // Download Fix by Sachu
-case 'ig': case 'insta': case 'instagram'case 'igdl': 
+case 'ig': case 'insta': case 'instagram': case 'igdl': 
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 	if (!q) return reply('Linknya?')
 	if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.errorLink)
