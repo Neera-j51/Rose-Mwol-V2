@@ -710,11 +710,20 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
     break
 //maker textpro
 case 'blackpink':case 'neon':case 'greenneon':case 'advanceglow':case 'futureneon':case 'sandwriting':case 'sandsummer':case 'sandengraved':case 'metaldark':case 'neonlight':case 'holographic':case 'text1917':case 'minion':case 'deluxesilver':case 'newyearcard':case 'bloodfrosted':case 'halloween':case 'jokerlogo':case 'fireworksparkle':case 'natureleaves':case 'bokeh':case 'toxic':case 'strawberry':case 'box3d':case 'roadwarning':case 'breakwall':case 'icecold':case 'luxury':case 'cloud':case 'summersand':case 'horrorblood':case 'thunder':{
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} rose`)
     ini_txt = args.join(" ")
     let gambar = await getBuffer(`https://api.lolhuman.xyz/api/textprome/${command}?apikey=${lolkey}&text=${ini_txt}`)
-    rose.sendMessage(from, gambar, image, { quoted: mek, caption: "Sukses" })
+    rose.sendMessage(from, gambar, image, { quoted: mek, caption: "Success" })
+    }
+    break
+//Random anime
+case 'waifu': case 'loli':{
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+    if (args.length == 0) return reply(`Example: ${prefix +command } rose`)
+    ini_txt = args.join(" ")
+    let gambar = await getBuffer(`https://api.waifu.pics/sfw/waifu`)
+    rose.sendMessage(from, gambar, image, { quoted: mek, caption: "Success" })
     }
     break
 //group
