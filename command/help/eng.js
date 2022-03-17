@@ -106,6 +106,13 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}nightcore [video/vn]
 │ • ${prefix}smooth [video/vn]
 │ • ${prefix}earrape [video/vn]
+│ • ${prefix}redusebg [video/vn]
+│ • ${prefix}integral [video/vn]
+│ • ${prefix}echo [video/vn]
+│ • ${prefix}vib2 [video/vn]
+│ • ${prefix}okbye [video/vn]
+│ • ${prefix}supereq [video/vn]
+│ • ${prefix}robo2 [video/vn]
 │
 ├ *Education*
 │
@@ -113,33 +120,6 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}nuliskanan [text]
 │ • ${prefix}foliokiri [text]
 │ • ${prefix}foliokanan [text]
-│
-├ *For wibu*
-│
-│ • ${prefix}nami 
-│ • ${prefix}copper 
-│ • ${prefix}naruto  
-│ • ${prefix}zoro 
-│ • ${prefix}ussop 
-│ • ${prefix}minato 
-│ • ${prefix}sasuke 
-│ • ${prefix}sakura
-│ • ${prefix}luffy 
-│ • ${prefix}sanji  
-│ • ${prefix}boruto 
-│ • ${prefix}sarada 
-│ • ${prefix}mitsuki 
-│ • ${prefix}orochimaru 
-│ • ${prefix}tsunade 
-│ • ${prefix}kakashi 
-│ • ${prefix}killua 
-│ • ${prefix}gon 
-│ • ${prefix}rimuru 
-│ • ${prefix}sagiri 
-│ • ${prefix}natsu 
-│ • ${prefix}tanjirou 
-│ • ${prefix}nezuko 
-│ • ${prefix}senku
 │
 ├ *Maker Ephoto360*
 │
