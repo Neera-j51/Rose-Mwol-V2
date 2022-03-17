@@ -920,6 +920,30 @@ case 'smooth': {
 										fs.unlinkSync(ran)
 										})}
 										break    
+case 'reverb': {
+									encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+									media = await rose.downloadAndSaveMediaMessage(encmedia)
+									ran = getRandom('.mp3')
+									exec(`ffmpeg -i ${media} -filter_complex '[0] [1] afir=dry=10:wet=10 [reverb]; [0] [reverb] amix=inputs=2:weights=10 1' ${ran}`, (err, stderr, stdout) => {
+										fs.unlinkSync(media)
+										if (err) return reply('Error!')
+										hah = fs.readFileSync(ran)
+										rose.sendMessage(from, hah, audio, {mimetype: 'audio/mpeg', ptt:true, quoted: mek, duration:99999999999999999999999})
+										fs.unlinkSync(ran)
+										})}
+										break
+case 'okbye': {
+									encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+									media = await rose.downloadAndSaveMediaMessage(encmedia)
+									ran = getRandom('.mp3')
+									exec(`ffmpeg -i ${media} -af volume=50 ${ran}`, (err, stderr, stdout) => {
+										fs.unlinkSync(media)
+										if (err) return reply('Error!')
+										hah = fs.readFileSync(ran)
+										rose.sendMessage(from, hah, audio, {mimetype: 'audio/mpeg', ptt:true, quoted: mek, duration:99999999999999999999999})
+										fs.unlinkSync(ran)
+										})}
+										break
 case 'earrape': {
 									encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 									media = await rose.downloadAndSaveMediaMessage(encmedia)
@@ -931,7 +955,7 @@ case 'earrape': {
 										rose.sendMessage(from, hah, audio, {mimetype: 'audio/mpeg', ptt:true, quoted: mek, duration:99999999999999999999999})
 										fs.unlinkSync(ran)
 										})}
-										break    
+										break
 case 'slowmo': case 'slow':{
 								try {
 										encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
