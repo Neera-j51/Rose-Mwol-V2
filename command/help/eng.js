@@ -154,6 +154,40 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}silverplaybutton
 │ • ${prefix}freefire
 │
+├ *Maker TextPro*
+│ • ${prefix}blackpink
+│ • ${prefix}neon
+│ • ${prefix}greenneon
+│ • ${prefix}advanceglow
+│ • ${prefix}futureneon
+│ • ${prefix}sandwriting
+│ • ${prefix}sandsummer
+│ • ${prefix}sandengraved
+│ • ${prefix}metaldark
+│ • ${prefix}neonlight
+│ • ${prefix}holographic
+│ • ${prefix}text1917
+│ • ${prefix}minion
+│ • ${prefix}deluxesilver
+│ • ${prefix}newyearcard
+│ • ${prefix}bloodfrosted
+│ • ${prefix}halloween
+│ • ${prefix}jokerlogo
+│ • ${prefix}fireworksparkle
+│ • ${prefix}natureleaves
+│ • ${prefix}bokeh
+│ • ${prefix}toxic
+│ • ${prefix}strawberry
+│ • ${prefix}box3d
+│ • ${prefix}roadwarning
+│ • ${prefix}breakwall
+│ • ${prefix}icecold
+│ • ${prefix}luxury
+│ • ${prefix}cloud
+│ • ${prefix}summersand
+│ • ${prefix}horrorblood
+│ • ${prefix}thunder
+│
 ├ *Game*
 │
 │ • ${prefix}tebakgambar 
