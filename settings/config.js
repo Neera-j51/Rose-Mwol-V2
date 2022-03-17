@@ -13,7 +13,7 @@ global.ownernumber = "919744933034" // Owner Number
 global.botname = "Rose-Mwol-V2" // Bot Name
 global.thumbnail = fs.readFileSync("./settings/rose.jpg") //bot photo
 global.background = "https://telegra.ph/file/d4c05638fa7886a1d8060.jpg" //Background Pic 
-global.lolkey = 'e966d3aac613b61dabd35cc6' // Register Api @lolhuman.xyz
+global.lolkey = 'cc817905bf0b956f2798a0a9' // Register Api @lolhuman.xyz
 global.zenzkey = '8423e19c13' // Register  Api @zenzapi.xyz
 global.limit = {
 		free:20,
