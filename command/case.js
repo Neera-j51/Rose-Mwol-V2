@@ -47,6 +47,7 @@ const util = require('util')
 const yts = require( 'yt-search')
 const ytdl = require("ytdl-core")
 const zee = require('xfarr-api')
+const SpottyDL = require('spottydl')
 
 //library
 const { simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('../lib/functions')
@@ -618,23 +619,22 @@ sendButLocation(from, captions, '© ' + ownername, thumbyt, [{buttonId: `.ytmp4 
 					}
 			
              break
-case 'spotify':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} URL`)
-    url = args[0]
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=${lolkey}&url=${url}`)
-    get_result = get_result.result
-    ini_txt = `Title : ${get_result.title}\n`
-    ini_txt += `Artists : ${get_result.artists}\n`
-    ini_txt += `Duration : ${get_result.duration}\n`
-    ini_txt += `Popularity : ${get_result.popularity}\n`
-    ini_txt += `Preview : ${get_result.preview_url}\n`
-    thumbnail = await getBuffer(get_result.thumbnail)
-    await rose.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
-    get_audio = await getBuffer(get_result.link)
-    await rose.sendMessage(from, get_audio, audio, { mimetype: 'audio/mpeg', filename: `${get_result.title}.mp3`, quoted: mek})
-    }
-    break
+case 'spotdl': case 'spotify':
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+	if (!q) return reply('Where Is URL ?')
+	if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.errorLink)
+	let urlspot = q
+	SpottyDL.getTrack(urlspot)
+	.then(async(result) => {
+		for(let i of result.results){
+			if(i.url.includes('mp3')){
+				let link = await getBuffer(i.url)
+                    rose.sendMessage(from,link,audio,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} *\n*Downloaded From Instagram*`})             
+                }
+            }
+            }).catch((err) => reply(`*Server Error !!*`))
+            
+             break
 case 'spotifysearch':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
