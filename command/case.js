@@ -635,23 +635,6 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
             }).catch((err) => reply(`*Server Error !!*`))
             
              break
-case 'spotifysearch':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
-    query = args.join(" ")
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotifysearch?apikey=${lolkey}&query=${query}`)
-    get_result = get_result.result
-    ini_txt = ""
-    for (var x of get_result) {
-        ini_txt += `Title : ${x.title}\n`
-        ini_txt += `Artists : ${x.artists}\n`
-        ini_txt += `Duration : ${x.duration}\n`
-        ini_txt += `Link : ${x.link}\n`
-        ini_txt += `Preview : ${x.preview_url}\n\n\n`
-	reply(ini_txt)
-    }
-    break
-	
 case 'nhentai':{
     if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
