@@ -470,18 +470,18 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 		for(let i of result.medias){
 			if(i.url.includes('mp4')){
 				let link = await getBuffer(i.url)
-                    rose.sendMessage(from,link,video,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `Instagram •  ${i.type}`})
+                    rose.sendMessage(from,link,video,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `'© ' + ${ownername} \n*Downloaded From Instagram*`})
                 } else {
                     let link = await getBuffer(i.url)
-                    rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `Instagram • ${i.type}`})                  
+                    rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `'© ' + ${ownername} \nDownloaded From Instagram`})                  
                 }
             }
-            }).catch((err) => reply(`🤲 Server eror`))
+            }).catch((err) => reply(`*Server Error !!*`))
             
              break
 case 'tiktok':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', '© ' + ownername, thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
+sendButLocation(from, 'Please select the media you want to download', '© ' + ownername, thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
 						
              break
 case 'tiktoknowm':   
