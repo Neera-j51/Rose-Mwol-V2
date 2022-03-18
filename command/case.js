@@ -47,6 +47,7 @@ const util = require('util')
 const yts = require( 'yt-search')
 const ytdl = require("ytdl-core")
 const zee = require('xfarr-api')
+const spdl = require('spdl-core').default;
 
 //library
 const { simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('../lib/functions')
@@ -622,7 +623,7 @@ case 'spotify':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
     url = args[0]
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=${lolkey}&url=${url}`)
+    get_result = await fetchJson(`https://zenzapi.xyz/downloader/spotify?apikey=${zenzkey}&url=${url}`)
     get_result = get_result.result
     ini_txt = `Title : ${get_result.title}\n`
     ini_txt += `Artists : ${get_result.artists}\n`
@@ -630,7 +631,7 @@ case 'spotify':{
     ini_txt += `Popularity : ${get_result.popularity}\n`
     ini_txt += `Preview : ${get_result.preview_url}\n`
     thumbnail = await getBuffer(get_result.thumbnail)
-    await haruka.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+    await rose.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
     get_audio = await getBuffer(get_result.link)
     await rose.sendMessage(from, get_audio, audio, { mimetype: 'audio/mpeg', filename: `${get_result.title}.mp3`, quoted: mek})
     }
