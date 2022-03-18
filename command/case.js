@@ -648,8 +648,7 @@ case 'spotifysearch':{
         ini_txt += `Duration : ${x.duration}\n`
         ini_txt += `Link : ${x.link}\n`
         ini_txt += `Preview : ${x.preview_url}\n\n\n`
-	get_audio = await getBuffer(get_result.link)
-        await rose.sendMessage(from, get_audio, audio, { mimetype: 'audio/mpeg', filename: `${get_result.title}.mp3`, quoted: mek})
+	reply(ini_txt)
     }
     break
 case 'nhentai':{
