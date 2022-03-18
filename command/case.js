@@ -910,7 +910,7 @@ case 'mp3': {
 										fs.unlinkSync(media)
 										if (err) return reply('Error!')
 										hah = fs.readFileSync(ran)
-										rose.sendMessage(from, get_audio, audio, { mimetype: 'audio/mpeg', filename: `${ran}.mp3`, quoted: mek})
+										rose.sendMessage(from, hah, audio, { mimetype: 'audio/mpeg', filename: `${ran}.mp3`, quoted: mek})
 										fs.unlinkSync(ran)
 										})}
 										break 
