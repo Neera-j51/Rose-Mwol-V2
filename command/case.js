@@ -623,14 +623,14 @@ case 'tiknsfw': case 'tikporn':{
     get_result = await fetchJson(`https://zenzapi.xyz/downloader/tikporn?apikey=${zenzkey}`)
     get_result = get_result.result
     ini_txt += `From : ${get_result.source}\n`
-    ini_txt = `Title : ${get_result.title}\n`
+    ini_txt += `Title : ${get_result.title}\n`
     ini_txt += `Likes : ${get_result.like}\n`
     ini_txt += `Views : ${get_result.views}\n`
     ini_txt += `Uploaded On : ${get_result.upload}\n`
     thumbnail = await getBuffer(get_result.thumb)
     await rose.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
     get_video = await getBuffer(get_result.video)
-    await rose.sendMessage(from, get_video, video, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp4`, quoted: mek})
+    await rose.sendMessage(from, get_video, video, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp4`, quoted: mek, caption: ini_txt})
     }
     break
 case 'spotifysearch':{
