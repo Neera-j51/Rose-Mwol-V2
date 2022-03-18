@@ -479,24 +479,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
             }).catch((err) => reply(`*Server Error !!*`))
             
              break
-case 'story': case 'igstory':
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-	if (args.length === 0) return reply(`Send the Command * $ {prefix} play * _Song title_`)
-	var igstory = args.join(' ')
-	hx.igstory(igstory)
-	.then(async(result) => {
-		for(let i of result.medias){
-			if(i.url.includes('mp4')){
-				let link = await getBuffer(i.url)
-                    rose.sendMessage(from,link,video,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} *\n*Downloaded From Instagram*`})
-                } else {
-                    let link = await getBuffer(i.url)
-                    rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} *\n*Downloaded From Instagram*`})                  
-                }
-            }
-            }).catch((err) => reply(`*Server Error !!*`))
-            
-             break
+
 case 'tiktok':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 sendButLocation(from, 'Please select the media you want to download', '© ' + ownername, thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
@@ -631,13 +614,13 @@ var thumbyt = await getBuffer(aramas.videos[0].thumbnail)
 sendButLocation(from, captions, '© ' + ownername, thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})
 						})
 				} catch (err) {
-					reply('Terjadi kesalahan')
+					reply('Error !!')
 					}
 			
              break
 case 'spotify':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+    if (args.length == 0) return reply(`Example: ${prefix + command} URL`)
     url = args[0]
     get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=${lolkey}&url=${url}`)
     get_result = get_result.result
@@ -665,8 +648,9 @@ case 'spotifysearch':{
         ini_txt += `Duration : ${x.duration}\n`
         ini_txt += `Link : ${x.link}\n`
         ini_txt += `Preview : ${x.preview_url}\n\n\n`
+	get_audio = await getBuffer(get_result.link)
+        await rose.sendMessage(from, get_audio, audio, { mimetype: 'audio/mpeg', filename: `${get_result.title}.mp3`, quoted: mek})
     }
-    reply(ini_txt)}
     break
 case 'nhentai':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
