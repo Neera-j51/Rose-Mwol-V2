@@ -470,10 +470,28 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 		for(let i of result.medias){
 			if(i.url.includes('mp4')){
 				let link = await getBuffer(i.url)
-                    rose.sendMessage(from,link,video,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `'© ' + ${ownername} \n*Downloaded From Instagram*`})
+                    rose.sendMessage(from,link,video,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} *\n*Downloaded From Instagram*`})
                 } else {
                     let link = await getBuffer(i.url)
-                    rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `'© ' + ${ownername} \nDownloaded From Instagram`})                  
+                    rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} *\n*Downloaded From Instagram*`})                  
+                }
+            }
+            }).catch((err) => reply(`*Server Error !!*`))
+            
+             break
+case 'story': case 'igstory':
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+	if (args.length === 0) return reply(`Send the Command * $ {prefix} play * _Song title_`)
+	var igstory = args.join(' ')
+	hx.igstory(igstory)
+	.then(async(result) => {
+		for(let i of result.medias){
+			if(i.url.includes('mp4')){
+				let link = await getBuffer(i.url)
+                    rose.sendMessage(from,link,video,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} *\n*Downloaded From Instagram*`})
+                } else {
+                    let link = await getBuffer(i.url)
+                    rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} *\n*Downloaded From Instagram*`})                  
                 }
             }
             }).catch((err) => reply(`*Server Error !!*`))
@@ -592,7 +610,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
              break
 case 'play': case 'song':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-			if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu_`)
+			if (args.length === 0) return reply(`Send the Command * $ {prefix} play * _Song title_`)
 			var srch = args.join(' ')
 			aramas = await yts(srch);
 			aramat = aramas.all 
