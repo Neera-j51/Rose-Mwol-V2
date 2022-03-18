@@ -628,7 +628,7 @@ case 'tiknsfw': case 'tikporn':{
     ini_txt += `Views : ${get_result.views}\n`
     ini_txt += `Uploaded On : ${get_result.upload}\n`
     thumbnail = await getBuffer(get_result.thumb)
-    await rose.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+    await rose.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
     get_video = await getBuffer(get_result.video)
     await rose.sendMessage(from, get_video, video, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp4`, quoted: mek})
     }
