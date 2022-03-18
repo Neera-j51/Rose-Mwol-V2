@@ -47,7 +47,6 @@ const util = require('util')
 const yts = require( 'yt-search')
 const ytdl = require("ytdl-core")
 const zee = require('xfarr-api')
-const spdl = require('spdl-core').default;
 
 //library
 const { simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('../lib/functions')
