@@ -465,7 +465,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 	if (!q) return reply('*Where Is Link ?*')
 	if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.errorLink)
 	let urlnya = q
-	zee.Igdl(urlnya)
+	zee.Instagram(urlnya)
 	.then(async(result) => {
 		for(let i of result.medias){
 			if(i.url.includes('mp4')){
@@ -490,7 +490,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
 			reply(lang.wait())
 			let nowem = q
-			zee.Ttdownloader(nowem)
+			zee.Tiktok(nowem)
 			.then(result => {
 				const { wm, nowm, audio } = result
 				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
@@ -508,7 +508,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
 			reply(lang.wait())
 			let wem = args.join(' ')
-			zee.Ttdownloader(wem)
+			zee.Tiktok(wem)
 			.then(result => {
 				const { wm, nowm, audio } = result
 				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
@@ -526,7 +526,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid Link')
 			reply(lang.wait())
 			let audi = q
-			zee.Ttdownloader(audi)
+			zee.Tiktok(audi)
 			.then(result => {
 				const { wm, nowm, audio } = result
 				axios.get(`https://tinyurl.com/api-create.php?url=${audio}`)
