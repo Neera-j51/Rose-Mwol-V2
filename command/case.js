@@ -611,28 +611,28 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 • Duration : ${aramas.videos[0].timestamp}
 • Url : ${aramas.videos[0].url}`
 var thumbyt = await getBuffer(aramas.videos[0].thumbnail)
-sendButLocation(from, captions, '© ' + ownername, thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})
+sendButLocation(from, captions, '© ' + ownername, thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: '▶ Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: '🎶 Audio'}, type: 1}], {quoted: mek})
 						})
 				} catch (err) {
 					reply('Error !!')
 					}
 			
              break
-case 'spotify':{
-	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+case 'tiknsfw': case 'tikporn':{
+    if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+    if (args.length == 0) return reply(`Example: ${prefix + command}`)
     url = args[0]
-    get_result = await fetchJson(`https://zenzapi.xyz/downloader/spotify?&url=${url}apikey=${zenzkey}`)
+    get_result = await fetchJson(`https://zenzapi.xyz/downloader/tikporn?&url=${url}apikey=${zenzkey}`)
     get_result = get_result.result
+    ini_txt += `From : ${get_result.source}\n`
     ini_txt = `Title : ${get_result.title}\n`
-    ini_txt += `Artists : ${get_result.artists}\n`
-    ini_txt += `Duration : ${get_result.duration}\n`
-    ini_txt += `Popularity : ${get_result.popularity}\n`
-    ini_txt += `Preview : ${get_result.preview_url}\n`
-    thumbnail = await getBuffer(get_result.thumbnail)
+    ini_txt += `Likes : ${get_result.like}\n`
+    ini_txt += `Views : ${get_result.views}\n`
+    ini_txt += `Uploaded On : ${get_result.upload}\n`
+    thumbnail = await getBuffer(get_result.thumb)
     await rose.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
-    get_audio = await getBuffer(get_result.link)
-    await rose.sendMessage(from, get_audio, audio, { mimetype: 'audio/mpeg', filename: `${get_result.title}.mp3`, quoted: mek})
+    get_video = await getBuffer(get_result.video)
+    await rose.sendMessage(from, get_video, video, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp4`, quoted: mek})
     }
     break
 case 'spotifysearch':{
