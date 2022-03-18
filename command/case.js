@@ -38,7 +38,7 @@ const ffmpeg = require('fluent-ffmpeg')
 const figlet = require('figlet')
 const fs = require('fs')
 const gis = require('g-i-s')
-const hx = require('hxz-api')
+const hx = require('hx-api')
 const ms = require('parse-ms')
 const moment = require('moment-timezone')
 const request = require('request')
@@ -462,10 +462,10 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 // Download Fix by Sachu
 case 'ig': case 'insta': case 'instagram': case 'igdl': 
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-	if (!q) return reply('*Where Is Link ?*')
+	if (!q) return reply('Where Is URL ?')
 	if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.errorLink)
 	let urlnya = q
-	zee.Instagram(urlnya)
+	hx.igdl(urlnya)
 	.then(async(result) => {
 		for(let i of result.medias){
 			if(i.url.includes('mp4')){
@@ -476,7 +476,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
                     rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `Instagram • ${i.type}`})                  
                 }
             }
-            }).catch((err) => reply(`Server Error !!`))
+            }).catch((err) => reply(`🤲 Server eror`))
             
              break
 case 'tiktok':
