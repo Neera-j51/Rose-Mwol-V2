@@ -623,7 +623,7 @@ case 'spotify':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
     url = args[0]
-    get_result = await fetchJson(`https://zenzapi.xyz/downloader/spotify?apikey=${zenzkey}&url=${url}`)
+    get_result = await fetchJson(`https://zenzapi.xyz/downloader/spotify?&url=${url}apikey=${zenzkey}`)
     get_result = get_result.result
     ini_txt = `Title : ${get_result.title}\n`
     ini_txt += `Artists : ${get_result.artists}\n`
