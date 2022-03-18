@@ -26,6 +26,7 @@ const
 	} = require("@adiwajshing/baileys")
 	
 //module exports
+const { toAudio } = require('../lib/converter')
 const axios = require("axios")
 const chalk = require('chalk')
 const { exec, spawn, execSync } = require("child_process")  
@@ -900,7 +901,19 @@ case 'nightcore':{
 						rose.sendMessage(from, hah, audio, {mimetype: 'audio/mpeg', ptt:true, quoted: mek,duration:99999999999999999999999})
 						fs.unlinkSync(ran)
 					   })}
-				  break      
+				  break    
+case 'mp3': {
+									encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+									media = await rose.downloadAndSaveMediaMessage(encmedia)
+									ran = getRandom('.mp3')
+									exec(`ffmpeg -i ${media}  -vn -ar 44100 -ac 2 -b:a 192k  ${ran}`, (err, stderr, stdout) => {
+										fs.unlinkSync(media)
+										if (err) return reply('Error!')
+										hah = fs.readFileSync(ran)
+										rose.sendMessage(from, hah, audio, {mimetype: 'audio/mpeg', ptt:true, quoted: mek, duration:99999999999999999999999})
+										fs.unlinkSync(ran)
+										})}
+										break 
 case 'bass': {
 									encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 									media = await rose.downloadAndSaveMediaMessage(encmedia)
