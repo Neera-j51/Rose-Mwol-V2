@@ -620,9 +620,7 @@ sendButLocation(from, captions, '© ' + ownername, thumbyt, [{buttonId: `.ytmp4 
              break
 case 'tiknsfw': case 'tikporn':{
     if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command}`)
-    url = args[0]
-    get_result = await fetchJson(`https://zenzapi.xyz/downloader/tikporn?&url=${url}apikey=${zenzkey}`)
+    get_result = await fetchJson(`https://zenzapi.xyz/downloader/tikporn?apikey=${zenzkey}`)
     get_result = get_result.result
     ini_txt += `From : ${get_result.source}\n`
     ini_txt = `Title : ${get_result.title}\n`
