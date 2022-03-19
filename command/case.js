@@ -477,6 +477,64 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
             }).catch((err) => reply(`*Server Error !!*`))
             
              break
+case 'tiktok':
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+sendButLocation(from, 'Please select the media you want to download', '© ' + ownername, thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
+						
+             break
+case 'tiktoknowm':   
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+			if (!q) return reply('*Where Is Link ?*')
+			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
+			reply(lang.wait())
+			let nowem = q
+			zee.Tiktok(nowem)
+			.then(result => {
+				const { wm, nowm, audio } = result
+				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
+				.then(async (a) => {
+					me = `*Link* : ${a.data}`
+					noweem = await getBuffer(nowm)
+					rose.sendMessage(from,noweem , MessageType.video, {mimetype: 'video/mp4',quoted: mek})
+					})
+				}).catch((err) => reply(`Link Not Valid !!`))
+			
+             break 
+case 'tiktokwm':
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+			if (!q) return reply('*Where Is Link ?*')
+			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
+			reply(lang.wait())
+			let wem = args.join(' ')
+			zee.Tiktok(wem)
+			.then(result => {
+				const { wm, nowm, audio } = result
+				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
+				.then(async (a) => {
+					me = `*Link* : ${a.data}`
+					weem = await getBuffer(wm)
+					rose.sendMessage(from,weem , MessageType.video, {mimetype: 'video/mp4',quoted: mek})
+					})
+				}).catch((err) => reply(`Link Not Valid`))
+			
+             break 
+case 'tiktokmusic': case 'tiktokaudio':  
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+			if (!q) return reply('*Where Is Link ?*')
+			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid Link')
+			reply(lang.wait())
+			let audi = q
+			zee.Tiktok(audi)
+			.then(result => {
+				const { wm, nowm, audio } = result
+				axios.get(`https://tinyurl.com/api-create.php?url=${audio}`)
+				.then(async (a) => {
+					audnha = await getBuffer(audio)
+					rose.sendMessage(from,audnha , MessageType.document, {mimetype: 'audio/mpeg',filename: `Tiktok Music.mp3`,quoted: mek})
+					})
+				}).catch((err) => reply(`Link Not Valid`))
+			
+             break
 case 'pinterest': 
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if(!q) return reply('Masukkan query')
