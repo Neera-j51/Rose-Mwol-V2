@@ -1713,20 +1713,3 @@ reply(String(e))
         }
 	}
 }
-function ucapan() {
-  const time = moment('2000','hh').tz('Asia/Kolkata').format('hh')
-  res = "Good Morning 🌄"
-  if (time >= 4) {
-    res = "Good Morning 🌞"
-  }
-  if (time > 10) {
-    res = "Good afternoon 🌅"
-  }
-  if (time >= 15) {
-    res = "Good Evening 🌆"
-  }
-  if (time >= 18) {
-    res = "Good Night 🌌"
-  }
-  return res
-}
