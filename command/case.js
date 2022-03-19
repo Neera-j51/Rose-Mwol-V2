@@ -477,24 +477,6 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
             }).catch((err) => reply(`*Server Error !!*`))
             
              break
-		case 'tiktok':
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-		if (args.length == 0) return reply(`Example: ${prefix + command} url`)
-                urlseen = args[0]
-                get_result = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${urlseen}&apikey=${zenzkey}`)
-                get_result = get_result.result.nowm
-                get_buffer = await getBuffer(get_result)
-                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: `Rose-Mwol` })
-            break
-            case 'tiktokaudio':
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                if (args.length == 0) return reply(`Example: ${prefix + command} url`)
-                urlseen = args[0]
-                get_result = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${urlseen}&apikey=${zenzkey}`)
-                get_result = get_result.result.audio_original
-                get_buffer = await getBuffer(get_result)
-                rose.sendMessage(from, get_buffer, audio, { mimetype: 'audio/mpeg', filename: `TikTok Sound.mp3`, quoted: mek})
-            break
 case 'pinterest': 
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if(!q) return reply('Masukkan query')
@@ -641,83 +623,9 @@ case 'nhentaisearch':{
     reply(ini_txt)
     }
     break
-	case 'joox':
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-		if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
-                urlseen = args[0]
-                get_result = await fetchJson(`https://zenzapi.xyz/downloader/joox?query=${urlseen}&apikey=${zenzkey}`)
-                get_result = get_result.result
-                get_buffer = await getBuffer(get_result.mp3Link)
-                rose.sendMessage(from, get_buffer, audio, { mimetype: 'audio/mpeg', filename: `Joox.mp3`, quoted: mek})
-            break
-
-            case 'scdl': case 'soundcloud':
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
-                urlseen = args[0]
-                get_result = await fetchJson(`https://zenzapi.xyz/downloader/soundcloud?url=${urlseen}&apikey=${zenzkey}`)
-                get_result = get_result.result
-                get_buffer = await getBuffer(get_result.url)
-                rose.sendMessage(from, get_buffer, audio, { mimetype: 'audio/mpeg', filename: `SoundCloud.mp3`, quoted: mek})
-            break
-
-            case 'xnxx': case 'xvideos':
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
-                urlseen = args[0]
-                get_result = await fetchJson(`https://zenzapi.xyz/downloader/${command}?url=${urlseen}&apikey=${zenzkey}`)
-                get_result = get_result.result
-                txt = `Title : ${get_result.title}\n`
-                txt += `Duration : ${get_result.duration}\n`
-		get_result.file =get_result.files
-                get_buffer = await getBuffer(get_result.file.low)
-                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
-            break
-
-            case 'cocofun':
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
-                urlseen = args[0]
-                get_result = await fetchJson(`https://zenzapi.xyz/downloader/cocofun?url=${urlseen}&apikey=${zenzkey}`)
-                get_result = get_result.result
-                txt = `Title : ${get_result.title}\n`
-                txt += `Desc : ${get_result.desc}\n`
-                txt += `Like : ${get_result.like}\n`
-                txt += `Play Count : ${get_result.play_count}`
-                get_buffer = await getBuffer(get_result.url)
-                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
-            break
-
-            case 'gore':
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                get_result = await fetchJson(`https://zenzapi.xyz/downloader/gore?apikey=${zenzkey}`)
-                get_result = get_result.result
-                txt = `Title : ${get_result.title}\n`
-                txt += `Tag : ${get_result.tag}`
-                get_buffer = await getBuffer(get_result.video1)
-                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
-            break
-
-            case 'tikporn':
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                get_result = await fetchJson(`https://zenzapi.xyz/downloader/tikporn?apikey=${zenzkey}`)
-                get_result = get_result.result
-                txt = `Title : ${get_result.title}\n`
-                txt += `Desc : ${get_result.desc}`
-                get_buffer = await getBuffer(get_result.video)
-                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
-            break
-
-            case 'hentaivid':
-		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                get_result = await fetchJson(`https://zenzapi.xyz/downloader/hentaivid?apikey=${zenzkey}`)
-                get_result = get_result.result
-                txt = `Title : ${get_result.title}\n`
-                txt += `Category : ${get_result.category}`
-                get_buffer = await getBuffer(get_result.video_1)
-                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
-            break
+		
 //maker ephoto
+		
 case 'wetglass':case 'multicolor3d':case 'watercolor':case 'luxurygold':case 'galaxywallpaper':case 'lighttext':case 'beautifulflower':case 'puppycute':case 'royaltext':case 'heartshaped':case 'birthdaycake':case 'galaxystyle':case 'hologram3d':case 'greenneon':case 'glossychrome':case 'greenbush':case 'metallogo':case 'noeltext':case 'glittergold':case 'textcake':case 'starsnight':case 'wooden3d':case 'textbyname':case 'writegalacy':case 'galaxybat':case 'snow3d':case 'birthdayday':case 'goldplaybutton':case 'silverplaybutton':case 'freefire':{
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} rose`)
@@ -726,7 +634,9 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
     rose.sendMessage(from, po, image, { quoted: mek, caption: "Selesai" })
     }
     break
+		
 //maker textpro
+		
 case 'blackpink':case 'neon':case 'greenneon':case 'advanceglow':case 'futureneon':case 'sandwriting':case 'sandsummer':case 'sandengraved':case 'metaldark':case 'neonlight':case 'holographic':case 'text1917':case 'minion':case 'deluxesilver':case 'newyearcard':case 'bloodfrosted':case 'halloween':case 'jokerlogo':case 'fireworksparkle':case 'natureleaves':case 'bokeh':case 'toxic':case 'strawberry':case 'box3d':case 'roadwarning':case 'breakwall':case 'icecold':case 'luxury':case 'cloud':case 'summersand':case 'horrorblood':case 'thunder':{
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix + command} rose`)
@@ -735,7 +645,9 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
     rose.sendMessage(from, gambar, image, { quoted: mek, caption: "Success" })
     }
     break
+		
 //Random anime
+		
 case 'waifu': case 'loli':{
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
     if (args.length == 0) return reply(`Example: ${prefix +command } rose`)
@@ -744,7 +656,9 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
     rose.sendMessage(from, gambar, image, { quoted: mek, caption: "Success" })
     }
     break
+		
 //group
+		
 case 'register': case 'reg': case 'register': case 'verify': case 'verif':
 			if (isrose) return  reply(lang.regis())
 			try {
@@ -905,7 +819,10 @@ case 'bc': case 'broadcast':
 							}
 						reply('Sukses broadcast')
 					}
-					break      
+					break   
+
+//Voice Changer By Sachu Mon
+		
 case 'nightcore':{
 	 if (!isQuotedAudio) return reply('Reply audio nya om')
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
