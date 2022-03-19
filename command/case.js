@@ -378,15 +378,15 @@ module.exports = rose = async (rose, mek) => {
 switch (command) {
 case 'menu': case 'help': case 'rose':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-				sendButLocation(from, lang.menu(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
+				sendButLocation(from, lang.menu(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.own', buttonText: {displayText: '💖 ᴡʜᴏ ɪꜱ ʏᴏᴜʀ ᴏᴡɴᴇʀ 💖'}, type: 1},{quoted: mek})
 				break
 case 'infobot':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			reply('Info Will be updated')
 break
-case 'owner':{
+case'ᴡʜᴏ ɪꜱ ʏᴏᴜʀ ᴏᴡɴᴇʀ': case 'owner': case'own':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-		const ownerContact = [ownernumber, "919744933034", "918075823747"]
+		const ownerContact = [ownernumber, "919744933034"]
 		let ini_list = []
 		for (let i of ownerContact.map(v => v + '@s.whatsapp.net')) {
 			const vname = rose.contacts[i] != undefined ? rose.contacts[i].vname || rose.contacts[i].notify : undefined
@@ -399,7 +399,7 @@ case 'owner':{
 					"displayName": `${ini_list.length} kontak`,
 					"contacts": ini_list 
 					}, 'contactsArrayMessage', { quoted: mek })
-					rose.sendMessage(from, `My Owner Number \n(Contact Him If You Have Any Doubts)`, text, {quoted: hehe})
+					rose.sendMessage(from, `🔸Hai, ${pushname} ! \n🔸 My Owner Number \n(Contact Him If You Have Any Doubts) \n🔸 Github: [ sachu-settan.github.io ]`, text, {quoted: hehe})
 				}
 			break
 case 'sticker':case 'stiker':case 'stickergif':case 'stikergif':case 'sgif':case 's':
