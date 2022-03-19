@@ -71,9 +71,6 @@ const tebakgambar = JSON.parse(fs.readFileSync('./database/game/tebakgambar.json
 const  { eng } = require(`./help`)
 lang = eng 
 
-//times
-const time = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('HH:mm:ss z')
-
 module.exports = rose = async (rose, mek) => {
 	try {
 		if (!mek.hasNewMessage) return
@@ -1716,7 +1713,7 @@ reply(String(e))
         }
 	}
 }
-function sayinggood() {
+function ucapan() {
   const time = moment.tz('Asia/Kolkata').format('HH')
   res = "Good Morning 🌄"
   if (time >= 4) {
