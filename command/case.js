@@ -677,7 +677,7 @@ case 'nhentaisearch':{
 				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
 		query = args.join(" ")
-                get_result = await fetchJson(`https://zenzapi.xyz/cocofun?url=${query}&apikey=${zenzkey}`)
+                get_result = await fetchJson(`https://zenzapi.xyz/downloader/cocofun?url=${query}&apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
                 txt += `Desc : ${get_result.desc}\n`
@@ -689,7 +689,7 @@ case 'nhentaisearch':{
 
             case 'gore':
 				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                get_result = await fetchJson(`https://zenzapi.xyz/gore?apikey=${zenzkey}`)
+                get_result = await fetchJson(`https://zenzapi.xyz/downloader/gore?apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
                 txt += `Tag : ${get_result.tag}`
@@ -699,7 +699,7 @@ case 'nhentaisearch':{
 
             case 'tikporn':
 				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                get_result = await fetchJson(`https://zenzapi.xyz/tikporn?apikey=${zenzkey}`)
+                get_result = await fetchJson(`https://zenzapi.xyz/downloader/tikporn?apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
                 txt += `Desc : ${get_result.desc}`
@@ -709,7 +709,7 @@ case 'nhentaisearch':{
 
             case 'hentaivid':
 				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                get_result = await fetchJson(`https://zenzapi.xyz/hentaivid?apikey=${zenzkey}`)
+                get_result = await fetchJson(`https://zenzapi.xyz/downloader/hentaivid?apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
                 txt += `Category : ${get_result.category}`
