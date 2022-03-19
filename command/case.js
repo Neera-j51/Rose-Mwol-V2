@@ -378,7 +378,8 @@ module.exports = rose = async (rose, mek) => {
 //Remember don't just leave it blank, your sc will get an error
 switch (command) {
 case 'menu': case 'help': case 'rose':
-				sendButLocation(from, lang.menu(prefix, ucapan, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+				sendButLocation(from, lang.menu(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
 				break
 case 'infobot':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
@@ -1715,21 +1716,4 @@ reply(String(e))
 	console.log('Message : %s', chalk.green(e))
         }
 	}
-}
-function ucapan() {
-  const time = moment.tz('Asia/Kolkata').format('HH')
-  res = "Good Morning 🌄"
-  if (time >= 4) {
-    res = "Good Morning 🌞"
-  }
-  if (time > 10) {
-    res = "Good afternoon 🌅"
-  }
-  if (time >= 15) {
-    res = "Good Evening 🌆"
-  }
-  if (time >= 18) {
-    res = "Good Night 🌌"
-  }
-  return res
 }
