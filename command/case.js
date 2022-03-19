@@ -665,7 +665,7 @@ case 'nhentaisearch':{
 				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
 		query = args.join(" ")
-                get_result = await fetchJson(`https://zenzapi.xyzdownloader/${command}?url=${query}&apikey=${zenzkey}`)
+                get_result = await fetchJson(`https://zenzapi.xyz/downloader/${command}?url=${query}&apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
                 txt += `Duration : ${get_result.duration}\n`
