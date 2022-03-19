@@ -60,8 +60,9 @@ exports.leave = () =>{
 │
 ╰─ ᝬ _Back Again Required Donation Yes_ >_<`
 }
-exports.menu = (prefix, salam, pushname) =>{
-	return`Hi ${pushname}, ${ucapan}
+exports.menu = (prefix, sayinggood, pushname) =>{
+	return`Hi ${pushname},
+	\n${sayinggood}
 
 ╭─⬣ *List Menu*
 │
