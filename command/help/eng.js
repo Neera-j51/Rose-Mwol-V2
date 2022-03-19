@@ -1,4 +1,3 @@
-let moment = require('moment-timezone')
 exports.limitcount = (prem, limitCounts) => {
 	return`
 *「 LIMIT COUNT 」*
@@ -19,7 +18,7 @@ exports.register = (sender, pushname, time, serialUser, totalUser) =>{
 
 • Name : ${pushname}
 • Number : ${sender.split("@")[0]}
-• ${ucapan()}
+• Time : ${time}
 • Serial : ${serialUser}
 
 Thanks, I've registered,
@@ -265,20 +264,3 @@ exports.menu = (prefix, sayinggood, pushname) =>{
 ╰─⬣
 `
 	}
-function ucapan() {
-  const timenow = moment.tz('Asia/Kolkata').format('HH')
-  res = "Good Morning 🌄"
-  if (time >= 4) {
-    res = "Good Morning 🌞"
-  }
-  if (time > 10) {
-    res = "Good afternoon 🌅"
-  }
-  if (time >= 15) {
-    res = "Good Evening 🌆"
-  }
-  if (time >= 18) {
-    res = "Good Night 🌌"
-  }
-  return res
-}
