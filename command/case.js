@@ -75,6 +75,7 @@ lang = eng
 const time = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('HH:mm:ss z')
 const salam = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('a')
 
+
 module.exports = rose = async (rose, mek) => {
 	try {
 		if (!mek.hasNewMessage) return
