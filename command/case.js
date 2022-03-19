@@ -669,7 +669,8 @@ case 'nhentaisearch':{
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
                 txt += `Duration : ${get_result.duration}\n`
-                get_buffer = await getBuffer(get_result.files.low)
+		get_result.file =get_result.files
+                get_buffer = await getBuffer(get_result.file.low)
                 rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
             break
 
