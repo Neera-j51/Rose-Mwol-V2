@@ -58,6 +58,7 @@ const { uploadImages } = require('../lib/uploadimage')
 
 //time
 const time = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('HH:mm:ss z')
+const salam = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('a')
 
 //json
 const antilink = JSON.parse(fs.readFileSync('./database/group/antilink.json'))
