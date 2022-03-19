@@ -64,8 +64,11 @@ exports.leave = () =>{
 ⌯ָ   ֙ Askot :
 ╰─ ᝬ _Back Again Admin Permission Required_ >_<`
 }
-exports.menu = (prefix, salam, pushname) =>{
-	return`Hi ${pushname}, ${salam}
+exports.menu = (prefix, pushname) =>{
+	return`🔸Hai, ${pushname} !
+🔸 Github: [ sachu-settan.github.io ]
+
+🔸 Bot Commands List
 
 ╭─⬣ *List Menu*
 │
