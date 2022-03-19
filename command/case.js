@@ -1223,7 +1223,7 @@ try{
    case 'soundcloud':
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 if(!q)return reply(`Example : ${prefix + command} link SoundCloud`)
-                if (!q.includes('m.soundcloud.com')) return reply('Itu bukan link SoundCloud')
+                if (!q.includes('soundcloud.com')) return reply('Itu bukan link SoundCloud')
                 await reply(lang.wait())
 				zee.SoundCloud(`${q}`).then(async (data) => {
                     let txt = `*----「 SOUNDCLOUD DOWNLOAD 」----*\n\n`
