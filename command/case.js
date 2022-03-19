@@ -479,15 +479,17 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
              break
 		case 'tiktok':
 		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-		if (!q) return await reply(`Example : ${prefix + command} url`)
+		if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+                q = args[0]
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result.nowm
                 get_buffer = await getBuffer(get_result)
                 rose.sendMessage(from, { video: get_buffer }, MessageType.video, {mimetype: 'video/mp4',quoted: mek})
             break
             case 'tiktokaudio':
-				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                if (!q) return await reply(`Example : ${prefix + command} url`)
+		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+                if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+                q = args[0]
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result.audio_original
                 get_buffer = await getBuffer(get_result)
@@ -641,7 +643,8 @@ case 'nhentaisearch':{
     break
 	case 'joox':
 		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-		if (!q) return await reply(`Example : ${prefix + command} url`)
+		if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+                q = args[0]
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/joox?query=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result
                 get_buffer = await getBuffer(get_result.mp3Link)
@@ -649,8 +652,9 @@ case 'nhentaisearch':{
             break
 
             case 'scdl': case 'soundcloud':
-				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                if (!q) return await reply(`Example : ${prefix + command} url`)
+		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+                if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+                q = args[0]
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/soundcloud?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result
                 get_buffer = await getBuffer(get_result.url)
@@ -658,8 +662,9 @@ case 'nhentaisearch':{
             break
 
             case 'xnxx': case 'xvideos':
-				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                if (!q) return await reply(`Example : ${prefix + command} url`)
+		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+                if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+                q = args[0]
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/${command}?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
@@ -669,8 +674,9 @@ case 'nhentaisearch':{
             break
 
             case 'cocofun':
-				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-                if (!q) return await reply(`Example : ${prefix + command} url`)
+		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+                if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+                q = args[0]
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/cocofun?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
@@ -682,7 +688,7 @@ case 'nhentaisearch':{
             break
 
             case 'gore':
-				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/gore?apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
@@ -692,7 +698,7 @@ case 'nhentaisearch':{
             break
 
             case 'tikporn':
-				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/tikporn?apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
@@ -702,7 +708,7 @@ case 'nhentaisearch':{
             break
 
             case 'hentaivid':
-				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/hentaivid?apikey=${zenzkey}`)
                 get_result = get_result.result
                 txt = `Title : ${get_result.title}\n`
