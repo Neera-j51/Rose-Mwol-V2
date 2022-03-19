@@ -21,7 +21,8 @@ exports.register = (sender, pushname, time, serialUser, totalUser) =>{
 • Time : ${time}
 • Serial : ${serialUser}
 
-Thanks, I've registered,
+Thanks, You're registered,
+
 Now Type .menu to view Rose-Mwol features.
 `
 	}
