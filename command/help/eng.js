@@ -5,7 +5,7 @@ Sisa limit : ${prem ? '1000' : `${limitCounts}`}
 `
 }
 exports.limitend = (pushname) => {
-	return`Maaf ${pushname} limit hari ini telah habis\nlimit di reset setiap jam 24:00`
+	return`Sorry ${pushname} today's limit has run out\limit is reset every 24:00 hours`
 }
 exports.noregis = (pushname) =>{
 	return` 🙅‍♀️ Hi ${pushname} You Haven't Registered Yet. Type .register First`
