@@ -56,6 +56,9 @@ const { yta, ytv} = require('../lib/y2mate')
 const simple = require('../lib/simple')
 const { uploadImages } = require('../lib/uploadimage')
 
+//time
+const time = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('HH:mm:ss z')
+
 //json
 const antilink = JSON.parse(fs.readFileSync('./database/group/antilink.json'))
 const _registered = JSON.parse(fs.readFileSync('./database/user/registered.json'))
