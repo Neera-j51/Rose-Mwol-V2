@@ -477,10 +477,10 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
             }).catch((err) => reply(`*Server Error !!*`))
             
              break
-			 case 'tiktok':
-			    if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+		case 'tiktok':
+		if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 if (!q) return await reply(`Where IS Url ?? \nExample : ${prefix + command} url`)
-                get_result = await fetchJson(`https://zenzapi.xyz/api/downloader/musically?url=${q}&apikey=${zenzkey}`)
+                get_result = await fetchJson(`https://zenzapi.xyz/api/downloader/tiktok?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result.nowm
                 get_buffer = await getBuffer(get_result)
                 rose.sendMessage(from, { video: get_buffer }, MessageType.video, {mimetype: 'video/mp4',quoted: mek})
@@ -488,7 +488,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
             case 'tiktokaudio':
 				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 if (!q) return await reply(`Where IS Url ?? \nExample : ${prefix + command} url`)
-                get_result = await fetchJson(`https://zenzapi.xyz/api/downloader/musically?url=${q}&apikey=${zenzkey}`)
+                get_result = await fetchJson(`https://zenzapi.xyz/api/downloader/tiktok?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result.audio_original
                 get_buffer = await getBuffer(get_result)
                 rose.sendMessage(from, { audio: get_buffer }, {mimetype: 'audio/mpeg',filename: `Tiktok Music.mp3`, quoted: mek })
