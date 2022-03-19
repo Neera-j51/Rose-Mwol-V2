@@ -75,7 +75,6 @@ lang = eng
 const time = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('HH:mm:ss z')
 const salam = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('a')
 
-
 module.exports = rose = async (rose, mek) => {
 	try {
 		if (!mek.hasNewMessage) return
@@ -380,7 +379,7 @@ module.exports = rose = async (rose, mek) => {
 switch (command) {
 case 'menu': case 'help': case 'rose':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-				sendButLocation(from, lang.menu(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
+				sendButLocation(from, lang.menu(prefix, sayinggood, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
 				break
 case 'infobot':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
@@ -404,7 +403,7 @@ case 'owner':{
 					rose.sendMessage(from, `My Owner Number \n(Contact Him If You Have Any Doubts)`, text, {quoted: hehe})
 				}
 			break
-case 'sticker':case 'stiker':case 'stickergif':case 'stikergif'
+case 'sticker':case 'stiker':case 'stickergif':case 'stikergif':case 'sgif':case 's':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 			const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -1718,7 +1717,20 @@ reply(String(e))
         }
 	}
 }
-
-
-	
-    
+function sayinggood() {
+  const time = moment.tz('Asia/Kolkata').format('HH')
+  res = "Good Morning 🌄"
+  if (time >= 4) {
+    res = "Good Morning 🌞"
+  }
+  if (time > 10) {
+    res = "Good afternoon 🌅"
+  }
+  if (time >= 15) {
+    res = "Good Evening 🌆"
+  }
+  if (time >= 18) {
+    res = "Good Night 🌌"
+  }
+  return res
+}
