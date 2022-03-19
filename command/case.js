@@ -483,7 +483,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result.nowm
                 get_buffer = await getBuffer(get_result)
-                rose.sendMessage(from, { video: get_buffer }, MessageType.video, {mimetype: 'video/mp4',quoted: mek})
+                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: `Rose-Mwol` })
             break
             case 'tiktokaudio':
 				if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
@@ -491,7 +491,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result.audio_original
                 get_buffer = await getBuffer(get_result)
-                rose.sendMessage(from, { audio: get_buffer }, {mimetype: 'audio/mpeg',filename: `Tiktok Music.mp3`, quoted: mek })
+                rose.sendMessage(from, get_buffer, audio, { mimetype: 'audio/mpeg', filename: `TikTok Sound.mp3`, quoted: mek})
             break
 case 'pinterest': 
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
@@ -645,7 +645,7 @@ case 'nhentaisearch':{
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/joox?query=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result
                 get_buffer = await getBuffer(get_result.mp3Link)
-                rose.sendMessage(from, { audio: get_buffer }, {mimetype: 'audio/mpeg',filename: `Joox.mp3`, quoted: mek })
+                rose.sendMessage(from, get_buffer, audio, { mimetype: 'audio/mpeg', filename: `Joox.mp3`, quoted: mek})
             break
 
             case 'scdl': case 'soundcloud':
@@ -654,7 +654,7 @@ case 'nhentaisearch':{
                 get_result = await fetchJson(`https://zenzapi.xyz/downloader/soundcloud?url=${q}&apikey=${zenzkey}`)
                 get_result = get_result.result
                 get_buffer = await getBuffer(get_result.url)
-                rose.sendMessage(from, { audio: get_buffer }, {mimetype: 'audio/mpeg',filename: `SoundCloud-dl.mp3`, quoted: mek })
+                rose.sendMessage(from, get_buffer, audio, { mimetype: 'audio/mpeg', filename: `SoundCloud.mp3`, quoted: mek})
             break
 
             case 'xnxx': case 'xvideos':
@@ -665,7 +665,7 @@ case 'nhentaisearch':{
                 txt = `Title : ${get_result.title}\n`
                 txt += `Duration : ${get_result.duration}\n`
                 get_buffer = await getBuffer(get_result.files.low)
-                rose.sendMessage(from, { video: get_buffer, caption: txt  }, MessageType.video, {mimetype: 'video/mp4', quoted: mek,caption: `*© Rose-Mwol *`})
+                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
             break
 
             case 'cocofun':
@@ -678,7 +678,7 @@ case 'nhentaisearch':{
                 txt += `Like : ${get_result.like}\n`
                 txt += `Play Count : ${get_result.play_count}`
                 get_buffer = await getBuffer(get_result.url)
-                rose.sendMessage(from, { video: get_buffer, caption: txt  }, MessageType.video, {mimetype: 'video/mp4', quoted: mek })
+                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
             break
 
             case 'gore':
@@ -688,7 +688,7 @@ case 'nhentaisearch':{
                 txt = `Title : ${get_result.title}\n`
                 txt += `Tag : ${get_result.tag}`
                 get_buffer = await getBuffer(get_result.video1)
-                rose.sendMessage(from, { video: get_buffer, caption: txt  }, MessageType.video, {mimetype: 'video/mp4', quoted: mek })
+                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
             break
 
             case 'tikporn':
@@ -698,7 +698,7 @@ case 'nhentaisearch':{
                 txt = `Title : ${get_result.title}\n`
                 txt += `Desc : ${get_result.desc}`
                 get_buffer = await getBuffer(get_result.video)
-                rose.sendMessage(from, { video: get_buffer, caption: txt  }, MessageType.video, {mimetype: 'video/mp4', quoted: mek })
+                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
             break
 
             case 'hentaivid':
@@ -708,7 +708,7 @@ case 'nhentaisearch':{
                 txt = `Title : ${get_result.title}\n`
                 txt += `Category : ${get_result.category}`
                 get_buffer = await getBuffer(get_result.video_1)
-                rose.sendMessage(from, { video: get_buffer, caption: txt  }, MessageType.video, {mimetype: 'video/mp4', quoted: mek })
+                rose.sendMessage(from, get_buffer, video, { quoted: mek, caption: txt })
             break
 //maker ephoto
 case 'wetglass':case 'multicolor3d':case 'watercolor':case 'luxurygold':case 'galaxywallpaper':case 'lighttext':case 'beautifulflower':case 'puppycute':case 'royaltext':case 'heartshaped':case 'birthdaycake':case 'galaxystyle':case 'hologram3d':case 'greenneon':case 'glossychrome':case 'greenbush':case 'metallogo':case 'noeltext':case 'glittergold':case 'textcake':case 'starsnight':case 'wooden3d':case 'textbyname':case 'writegalacy':case 'galaxybat':case 'snow3d':case 'birthdayday':case 'goldplaybutton':case 'silverplaybutton':case 'freefire':{
