@@ -1714,7 +1714,7 @@ reply(String(e))
 	}
 }
 function ucapan() {
-  const time = moment.tz('Asia/Kolkata').format('HH')
+  const time = moment('2000','hh').tz('Asia/Kolkata').format('hh:mm')
   res = "Good Morning 🌄"
   if (time >= 4) {
     res = "Good Morning 🌞"
