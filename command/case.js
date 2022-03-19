@@ -378,7 +378,7 @@ module.exports = rose = async (rose, mek) => {
 switch (command) {
 case 'menu': case 'help': case 'rose':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-				sendButLocation(from, lang.menu(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.own', buttonText: {displayText: '💖 ᴡʜᴏ ɪꜱ ʏᴏᴜʀ ᴏᴡɴᴇʀ 💖'}, type: 1},{quoted: mek})
+				sendButLocation(from, lang.menu(prefix, pushname), '© ' + ownername, thumbnail, [{buttonId: '.own', buttonText: {displayText: '💖 ᴡʜᴏ ɪꜱ ʏᴏᴜʀ ᴏᴡɴᴇʀ 💖'}, type: 1},{quoted: mek})
 				break
 case 'infobot':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
