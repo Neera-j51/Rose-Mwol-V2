@@ -65,20 +65,15 @@ exports.leave = () =>{
 ╰─ ᝬ _Back Again Admin Permission Required_ >_<`
 }
 exports.menu = (prefix, pushname, botname) =>{
-	return`╒═══≽ 《  ${botname}  》═══≽
+	return`╒══≽ 《 *USER INFO* 》 ══≽
 │
+├≽ *Hai, ${pushname} !*
 ├≽ *Creator : Sachu Settan * 
 ├≽ *Lib : Baileys ^3.5.3* 
 ├≽ *Prefix : 「 ${prefix} 」* 
 ├≽ *Total Features : 200+* 
 │
 ╘═══ 《 *© Rose-Mwol* 》═══≽
-
-╒══≽ 《 *USER INFO* 》 ══≽
-│
-├≽ *Hai, ${pushname} !*
-│
-╘══ 《 *© Rose-Mwol* 》══≽
 
 ╒═══≽《 *List Menu* 》═══≽
 │
@@ -219,7 +214,7 @@ exports.menu = (prefix, pushname, botname) =>{
 │
 ╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
-╒═══≽《 *Game* 》 ═══≽
+╒═════≽《 *Games* 》 ════≽
 │
 ├≽ ${prefix}tebakgambar 
 │
@@ -265,12 +260,12 @@ exports.menu = (prefix, pushname, botname) =>{
 │
 ╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
-╒═══≽《 *Info* 》 ═══≽
+╒═════≽《 *Info* 》 ═════≽
 │
 ├≽ ${prefix}owner
 ├≽ ${prefix}register
 │
-╘═══ 《 *© Rose-Mwol* 》 ═══≽
+╘════ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Owner* 》 ═══≽
 │
@@ -282,7 +277,7 @@ exports.menu = (prefix, pushname, botname) =>{
 ├≽ $
 ├≽  => 
 │
-╘═══ 《 *© Rose-Mwol* 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》═══≽
 
 ╒═══≽《 *Group* 》 ═══≽
 │
