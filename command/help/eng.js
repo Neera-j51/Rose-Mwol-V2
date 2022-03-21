@@ -67,20 +67,20 @@ exports.leave = () =>{
 exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 	return`╒═══≽ 《 *${botname}* 》 ═══≽
 │
-├≽ *Creator : ${ownername}* 
+├≽ *Creator : ${ownername} * 
 ├≽ *Lib : Baileys ^3.5.3* 
 ├≽ *Prefix : 「 ${prefix} 」* 
 ├≽ *Total Features : 200+* 
 ├≽ *Github : 「 ${githubid} 」*
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽ 《 *USER INFO* 》 ═══≽
 │
 ├≽ *Hai, ${pushname} !*
-├≽ *BOT IS ${privateanno}*
+├≽ *BOT IS ${privateanno} *
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *List Menu* 》 ═══≽
 │
@@ -88,7 +88,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}help
 ├≽ ${prefix}rose
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Download* 》 ═══≽
 │
@@ -109,7 +109,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}nhentaipdf [code]
 ├≽ ${prefix}nhentaisearch [query]
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Convert* 》 ═══≽
 │
@@ -118,7 +118,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}smeme [text]
 ├≽ ${prefix}memegen [text|text2]
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Voice Changer* 》 ═══≽
 │
@@ -139,7 +139,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}supereq [video/vn]
 ├≽ ${prefix}robo2 [video/vn]
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Education* 》 ═══≽
 │
@@ -148,7 +148,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}foliokiri [text]
 ├≽ ${prefix}foliokanan [text]
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Maker Ephoto360* 》 ═══≽
 │
@@ -183,7 +183,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}silverplaybutton
 ├≽ ${prefix}freefire
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Maker TextPro* 》 ═══≽
 ├≽ ${prefix}blackpink
@@ -219,13 +219,13 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}horrorblood
 ├≽ ${prefix}thunder
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Game* 》 ═══≽
 │
 ├≽ ${prefix}tebakgambar 
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《*Anime search* 》 ═══≽
 │
@@ -237,7 +237,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}otakudesu [query]
 ├≽ ${prefix}otakudesusearch [query] 
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Random text* 》 ═══≽
 │
@@ -265,14 +265,14 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}animequote2
 ├≽ ${prefix}trumpthink
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Info* 》 ═══≽
 │
 ├≽ ${prefix}owner
 ├≽ ${prefix}register
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Owner* 》 ═══≽
 │
@@ -284,7 +284,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ $
 ├≽  => 
 │
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 
 ╒═══≽《 *Group* 》 ═══≽
 │
@@ -298,6 +298,6 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}kick @tag
 ├≽ ${prefix}setdesc [text] 
 ├≽ ${prefix}setname [text] 
-╘═══ 《 *© ${ownername}* 》 ═══≽
+╘═══ 《 *© ${ownername} * 》 ═══≽
 `
 	}

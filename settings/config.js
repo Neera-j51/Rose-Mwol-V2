@@ -9,7 +9,7 @@ global.anticall = false // Anti Call On Or Off
 global.anti_delete = false // Anti Delete On Or Off
 
 // Settings
-global.ownername = "Sachu-Settan" // Owner Name
+global.ownername = 'Sachu-Settan' // Owner Name
 global.ownernumber = "919744933034" // Owner Number
 global.botname = "Rose-Mwol-V2" // Bot Name
 global.thumbnail = fs.readFileSync("./settings/rose.jpg") //bot photo

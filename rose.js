@@ -30,7 +30,7 @@ nocache('./command/case.js', module => console.log(`${module} is now updated!`))
 const starts = async (rose = new WAConnection()) => {
     rose.logger.level = 'warn'
     rose.version = [2, 2143, 3]
-    rose.browserDescription = [ 'rose-Bot', 'Chrome', '3.0' ]
+    rose.browserDescription = [ 'Rose-Bot', 'Chrome', '3.0' ]
 	CFonts.say('rose', {
 		font: 'block',
     	color: ['#ff9c00'],
