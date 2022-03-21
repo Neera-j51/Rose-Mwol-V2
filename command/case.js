@@ -1285,12 +1285,12 @@ reply(lang.wait())
 		
 		break
 case 'ytmp3': {
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3* _Url YouTube_`)
-			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link Not Valid!')
+			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link tidak valid!')
 			var mulaikah = args.join(' ')
 			await reply(lang.wait())
-                zee.Youtube(mulaikah).then(async (data) => {
+                    hx.Youtube(mulaikah).then(async (data) => {
                     let txt = `*----「 YOUTUBE AUDIO 」----*\n\n`
                     txt += `*• Quality :* ${data.medias[7].quality}\n`
                     txt += `*• Type :* ${data.medias[7].extension}\n`
@@ -1303,11 +1303,11 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
                 }
              break
 case 'ytmp4': {
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
+if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3* _Url YouTube_`)
-			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link Not Valid!')
+			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link tidak valid!')
 			var mulaikah = args.join(' ')
-			zee.Youtube(mulaikah).then(async (data) => {
+			hx.Youtube(mulaikah).then(async (data) => {
                     let txt = `*----「 YOUTUBE VIDEO 」----*\n\n`
                     txt += `*• Quality :* ${data.medias[1].quality}\n`
                     txt += `*• Type :* ${data.medias[1].extension}\n`
