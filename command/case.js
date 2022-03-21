@@ -1314,52 +1314,6 @@ reply(lang.wait())
 		})
 		
 		break
-case 'ytmp3':
-            if (args.length == 0) return aruga.reply(from, `Untuk mendownload lagu dari youtube\nketik: ${prefix}ytmp3 [link_yt]`, id)
-            const linkmp3 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
-			rugaapi.ytmp3(`https://youtu.be/${linkmp3}`)
-            .then(async(res) => {
-				if (res.error) return aruga.sendFileFromUrl(from, `${res.url}`, '', `${res.error}`)
-				await aruga.sendFileFromUrl(from, `${res.result.thumb}`, '', `Lagu ditemukan\n\nJudul: ${res.result.title}\nDesc: ${res.result.desc}\nSabar lagi dikirim`, id)
-				await aruga.sendFileFromUrl(from, `${res.result.url}`, '', '', id)
-				.catch(() => {
-					aruga.reply(from, `URL Ini ${args[0]} Sudah pernah di Download sebelumnya. URL Akan di Reset setelah 1 Jam/60 Menit`, id)
-				})
-			})
-            break
-        case 'ytmp4':
-            if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-            if (args.length == 0) return aruga.reply(from, `Untuk mendownload lagu dari youtube\nketik: ${prefix}ytmp3 [link_yt]`, id)
-            const linkmp4 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
-			rugaapi.ytmp4(`https://youtu.be/${linkmp4}`)
-            .then(async(res) => {
-				if (res.error) return aruga.sendFileFromUrl(from, `${res.url}`, '', `${res.error}`)
-				sendFileFromUrl(from, `${res.result.thumb}`, '', `Lagu ditemukan\n\nJudul: ${res.result.title}\nDesc: ${res.result.desc}\nSabar lagi dikirim`, id)
-				sendFileFromUrl(from, `${res.result.url}`, '', '', id)
-				.catch(() => {
-					await rose.sendMessage(from, `URL Ini ${args[0]} Sudah pernah di Download sebelumnya. URL akan di Reset setelah 1 Jam/60 Menit`, id)
-				})
-			})
-            break
-case 'ytmp3': {
-if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-			if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3* _Url YouTube_`)
-			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link tidak valid!')
-			var mulaikah = args.join(' ')
-			await reply(lang.wait())
-                    zee.Youtube(mulaikah).then(async (data) => {
-                    let txt = `*----「 YOUTUBE AUDIO 」----*\n\n`
-                    txt += `*• Quality :* ${data.medias[7].quality}\n`
-                    txt += `*• Type :* ${data.medias[7].extension}\n`
-                    txt += `*• Size :* ${data.medias[7].formattedSize}\n`
-                    txt += `*• Url Source :* ${data.url}\n\n`
-                    txt += `_Mohon tunggu sebentar , uploading media..._`
-                    sendFileFromUrl(from, data.thumbnail, txt, mek)
-                    sendFileFromUrl(from, data.medias[7].url, '', mek)
-                })
-                }
-             break
-
 //anime search
 case 'character':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
