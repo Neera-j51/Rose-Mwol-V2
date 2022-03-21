@@ -64,14 +64,14 @@ exports.leave = () =>{
 ⌯ָ   ֙ Askot :
 ╰─ ᝬ _Back Again Admin Permission Required_ >_<`
 }
-exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
-	return`╒═══≽ 《 *${botname}* 》 ═══≽
+exports.menu = (prefix,pushname,ownername,githubid,botname,privateanno) =>{
+	return`╒═══≽ 《 *Rose-Mwol-V2* 》 ═══≽
 │
-├≽ *Creator : ${ownername} * 
+├≽ *Creator : Sachu Settan * 
 ├≽ *Lib : Baileys ^3.5.3* 
 ├≽ *Prefix : 「 ${prefix} 」* 
 ├≽ *Total Features : 200+* 
-├≽ *Github : 「 ${githubid} 」*
+├≽ *Github : 「 ${githubid} 」
 │
 ╘═══ 《 *© ${ownername} * 》 ═══≽
 
