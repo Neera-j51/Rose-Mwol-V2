@@ -15,6 +15,7 @@ global.thumbnail = fs.readFileSync("./settings/rose.jpg") //bot photo
 global.background = "https://telegra.ph/file/d4c05638fa7886a1d8060.jpg" //Background Pic 
 global.lolkey = 'cc817905bf0b956f2798a0a9' // Register Api @lolhuman.xyz
 global.zenzkey = '67e8399956' // Register  Api @zenzapi.xyz
+global.github ="Sachu-Settan.github.io" //Github Id
 global.limit = {
 		free:20,
 		premium:1000
