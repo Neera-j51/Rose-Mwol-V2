@@ -64,23 +64,21 @@ exports.leave = () =>{
 ⌯ָ   ֙ Askot :
 ╰─ ᝬ _Back Again Admin Permission Required_ >_<`
 }
-exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
-	return`╒═══≽ 《 * ${botname} * 》═══≽
+exports.menu = (prefix, pushname, botname) =>{
+	return`╒═══≽ 《  ${botname}  》═══≽
 │
-├≽ *Creator : ${ownername} * 
+├≽ *Creator : Sachu Settan * 
 ├≽ *Lib : Baileys ^3.5.3* 
 ├≽ *Prefix : 「 ${prefix} 」* 
 ├≽ *Total Features : 200+* 
-├≽ *Github : 「 ${githubid} 」*
 │
-╘═══ 《 *© ${ownername} * 》═══≽
+╘═══ 《 *© Rose-Mwol* 》═══≽
 
 ╒══≽ 《 *USER INFO* 》 ══≽
 │
 ├≽ *Hai, ${pushname} !*
-├≽ *BOT IS ${privateanno} *
 │
-╘══ 《 *© ${ownername} * 》══≽
+╘══ 《 *© Rose-Mwol* 》══≽
 
 ╒═══≽《 *List Menu* 》═══≽
 │
@@ -88,28 +86,28 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}help
 ├≽ ${prefix}rose
 │
-╘══ 《 *© ${ownername} * 》══≽
+╘══ 《 *© Rose-Mwol* 》══≽
 
 ╒═══≽《 *Download* 》 ═══≽
 │
-├≽ ${prefix}play [query]
-├≽ ${prefix}song [judul lagu]
-├≽ ${prefix}pinterest [query]
-├≽ ${prefix}ytmp3 [url]
-├≽ ${prefix}ytmp4 [url]
-├≽ ${prefix}tiktok [url]
-├≽ ${prefix}tiktoknowm [url]
-├≽ ${prefix}tiktokwm [url]
-├≽ ${prefix}tiktokaudio [url]
-├≽ ${prefix}soundcloud [url]
-├≽ ${prefix}telesticker [url]
-├≽ ${prefix}spotify [url]
-├≽ ${prefix}spotifysearch [query]
-├≽ ${prefix}nhentai [code]
-├≽ ${prefix}nhentaipdf [code]
-├≽ ${prefix}nhentaisearch [query]
+├≽ ${prefix}play [Query]
+├≽ ${prefix}song [Query]
+├≽ ${prefix}pinterest [Query]
+├≽ ${prefix}ytmp3 [URL]
+├≽ ${prefix}ytmp4 [URL]
+├≽ ${prefix}tiktok [URL]
+├≽ ${prefix}tiktoknowm [URL]
+├≽ ${prefix}tiktokwm [URL]
+├≽ ${prefix}tiktokaudio [URL]
+├≽ ${prefix}soundcloud [URL]
+├≽ ${prefix}telesticker [URL]
+├≽ ${prefix}spotify [URL]
+├≽ ${prefix}spotifysearch [Query]
+├≽ ${prefix}nhentai [Code]
+├≽ ${prefix}nhentaipdf [Code]
+├≽ ${prefix}nhentaisearch [Query]
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Convert* 》 ═══≽
 │
@@ -118,7 +116,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}smeme [text]
 ├≽ ${prefix}memegen [text|text2]
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Voice Changer* 》 ═══≽
 │
@@ -139,7 +137,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}supereq [video/vn]
 ├≽ ${prefix}robo2 [video/vn]
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Education* 》 ═══≽
 │
@@ -148,7 +146,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}foliokiri [text]
 ├≽ ${prefix}foliokanan [text]
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Maker Ephoto360* 》 ═══≽
 │
@@ -183,7 +181,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}silverplaybutton
 ├≽ ${prefix}freefire
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Maker TextPro* 》 ═══≽
 ├≽ ${prefix}blackpink
@@ -219,25 +217,25 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}horrorblood
 ├≽ ${prefix}thunder
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Game* 》 ═══≽
 │
 ├≽ ${prefix}tebakgambar 
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《*Anime search* 》 ═══≽
 │
 ├≽ ${prefix}character [anime]
-├≽ ${prefix}anime [query]
-├≽ ${prefix}manga [query]
-├≽ ${prefix}kusonime [query]
-├≽ ${prefix}kusonimesearch [query]
-├≽ ${prefix}otakudesu [query]
-├≽ ${prefix}otakudesusearch [query] 
+├≽ ${prefix}anime [Query]
+├≽ ${prefix}manga [Query]
+├≽ ${prefix}kusonime [Query]
+├≽ ${prefix}kusonimesearch [Query]
+├≽ ${prefix}otakudesu [Query]
+├≽ ${prefix}otakudesusearch [Query] 
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Random text* 》 ═══≽
 │
@@ -265,14 +263,14 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}animequote2
 ├≽ ${prefix}trumpthink
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Info* 》 ═══≽
 │
 ├≽ ${prefix}owner
 ├≽ ${prefix}register
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Owner* 》 ═══≽
 │
@@ -284,7 +282,7 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ $
 ├≽  => 
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 
 ╒═══≽《 *Group* 》 ═══≽
 │
@@ -298,6 +296,6 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ ${prefix}kick @tag
 ├≽ ${prefix}setdesc [text] 
 ├≽ ${prefix}setname [text] 
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© Rose-Mwol* 》 ═══≽
 `
 	}
