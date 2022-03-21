@@ -65,7 +65,7 @@ exports.leave = () =>{
 ╰─ ᝬ _Back Again Admin Permission Required_ >_<`
 }
 exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
-	return`╒═══≽ 《 *${botname}* 》 ═══≽
+	return`╒═══≽ 《 * ${botname} * 》═══≽
 │
 ├≽ *Creator : ${ownername} * 
 ├≽ *Lib : Baileys ^3.5.3* 
@@ -73,22 +73,22 @@ exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 ├≽ *Total Features : 200+* 
 ├≽ *Github : 「 ${githubid} 」*
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘═══ 《 *© ${ownername} * 》═══≽
 
-╒═══≽ 《 *USER INFO* 》 ═══≽
+╒══≽ 《 *USER INFO* 》 ══≽
 │
 ├≽ *Hai, ${pushname} !*
 ├≽ *BOT IS ${privateanno} *
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘══ 《 *© ${ownername} * 》══≽
 
-╒═══≽《 *List Menu* 》 ═══≽
+╒═══≽《 *List Menu* 》═══≽
 │
 ├≽ ${prefix}menu
 ├≽ ${prefix}help
 ├≽ ${prefix}rose
 │
-╘═══ 《 *© ${ownername} * 》 ═══≽
+╘══ 《 *© ${ownername} * 》══≽
 
 ╒═══≽《 *Download* 》 ═══≽
 │
