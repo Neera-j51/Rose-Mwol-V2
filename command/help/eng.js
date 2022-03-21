@@ -64,20 +64,21 @@ exports.leave = () =>{
 ⌯ָ   ֙ Askot :
 ╰─ ᝬ _Back Again Admin Permission Required_ >_<`
 }
-exports.menu = (prefix, pushname, ownername, github, botname) =>{
+exports.menu = (prefix, pushname, ownername, githubid, botname, privateanno) =>{
 	return`╒═══≽ 《 *${botname}* 》 ═══≽
 │
 ├≽ *Creator : ${ownername}* 
 ├≽ *Lib : Baileys ^3.5.3* 
 ├≽ *Prefix : 「 ${prefix} 」* 
 ├≽ *Total Features : 200+* 
-├≽ *Github : 「 ${github} 」*
+├≽ *Github : 「 ${githubid} 」*
 │
 ╘═══ 《 *© ${ownername}* 》 ═══≽
 
 ╒═══≽ 《 *USER INFO* 》 ═══≽
 │
 ├≽ *Hai, ${pushname} !*
+├≽ *BOT IS ${privateanno}*
 │
 ╘═══ 《 *© ${ownername}* 》 ═══≽
 
