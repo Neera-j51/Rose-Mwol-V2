@@ -1290,7 +1290,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link tidak valid!')
 			var mulaikah = args.join(' ')
 			await reply(lang.wait())
-                    hx.Youtube(mulaikah).then(async (data) => {
+                    zee.Youtube(mulaikah).then(async (data) => {
                     let txt = `*----「 YOUTUBE AUDIO 」----*\n\n`
                     txt += `*• Quality :* ${data.medias[7].quality}\n`
                     txt += `*• Type :* ${data.medias[7].extension}\n`
@@ -1307,7 +1307,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Klik Button Un
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3* _Url YouTube_`)
 			if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link tidak valid!')
 			var mulaikah = args.join(' ')
-			hx.Youtube(mulaikah).then(async (data) => {
+			zee.Youtube(mulaikah).then(async (data) => {
                     let txt = `*----「 YOUTUBE VIDEO 」----*\n\n`
                     txt += `*• Quality :* ${data.medias[1].quality}\n`
                     txt += `*• Type :* ${data.medias[1].extension}\n`
