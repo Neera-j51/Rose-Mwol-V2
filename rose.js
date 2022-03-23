@@ -96,23 +96,23 @@ const starts = async (rose = new WAConnection()) => {
 						let gakloo = [{
 										"buttonId": `.menu`,
 										"buttonText": {
-											"displayText": "Welcome 👋"
+											"displayText": "Menu"
 											},
 										"type": "RESPONSE"
 										}]
 						if (anu.action == 'add' && !num.includes(rose.user.jid)) {
 							welcome = await getBuffer(`https://api-alphabot.herokuapp.com/api/greetings/welcome2?name=${encodeURI(anu_user)}&member=${encodeURI(mdata.participants.length)}&groupName=${encodeURI(mdata.subject)}&ppuser=${ppmem3}&bgurl=${background}&apikey=Alphabot`)
 							try{
-							await sendButLoc(mdata.id, `Welcome @${num.split('@')[0]} to ${mdata.subject}` + '\n' + lang.welcome(), `Welcome Message By ${ownername}`,welcome, [{"buttonId": `.menu`,"buttonText": {"displayText": "Welcome 🤗"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+							await sendButLoc(mdata.id, `Welcome @${num.split('@')[0]} to ${mdata.subject}` + '\n' + lang.welcome(), `Welcome Message By ${ownername}`,welcome, [{"buttonId": `.menu`,"buttonText": {"displayText": "Menu"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
 							} catch {
-								await sendButLoc(mdata.id, `Welcome @${num.split('@')[0]} to ${mdata.subject}` + '\n' + lang.welcome(), `Welcome Message By ${ownername}`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Welcome 🤗"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+								await sendButLoc(mdata.id, `Welcome @${num.split('@')[0]} to ${mdata.subject}` + '\n' + lang.welcome(), `Welcome Message By ${ownername}`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Menu"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
 							}
 						} else if (anu.action == 'remove' && !num.includes(rose.user.jid)) {
 							goodbye = await getBuffer(`https://api-alphabot.herokuapp.com/api/greetings/goodbye2?name=${encodeURI(anu_user)}&member=${encodeURI(mdata.participants.length)}&groupName=${encodeURI(mdata.subject)}&ppuser=${ppmem3}&bgurl=${background}&apikey=Alphabot`)
 							try{
-							await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\n' + lang.leave(), `Leave Message By ${ownername}`,goodbye, [{"buttonId": `.menu`,"buttonText": {"displayText": "Bye 🤲"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+							await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\nָLeave from group:\n${mdata.subject}` + '\n' + lang.leave(), `Leave Message By ${ownername}`,goodbye, [{"buttonId": `.menu`,"buttonText": {"displayText": "Menu"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
 							} catch {
-								await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\n' + lang.leave(), `Leave Message By ${ownername}`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Bye 🤲"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+								await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\nLeave from group:\n${mdata.subject}` + '\n' + lang.leave(), `Leave Message By ${ownername}`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Menu"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
 							}
 							
 						}
