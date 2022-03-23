@@ -48,14 +48,15 @@ exports.wait = () =>{
 exports.ok = () =>{
 	return` ✅ Ok Done ~`
 	}
-exports.welcome = () =>{
+exports.welcome = (pushname, botname) =>{
 	return`Entry BGM Ittu Koduku Guys
 ⌯
 ⌯  ֙ Name : ${pushname}
+⌯  ֙ Welcome Message By : ${botname}
 ⌯
 ╰─ ᝬ _Please Obey The Group Rules_  >_<`
       }
-exports.leave = () =>{
+exports.leave = (pushname) =>{
 	return`Sed Akki Monu 🥲
 ⌯
 ⌯ָ   ֙ Name : ${pushname}
