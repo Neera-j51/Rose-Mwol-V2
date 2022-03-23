@@ -94,7 +94,7 @@ const starts = async (rose = new WAConnection()) => {
 						let ppgc2 = await getBuffer(ppgc)
 						let ppgc3 = await uploadImages(ppgc2)
 						let gakloo = [{
-										"buttonId": `.owner`,
+										"buttonId": `.menu,
 										"buttonText": {
 											"displayText": "Welcome 👋"
 											},
