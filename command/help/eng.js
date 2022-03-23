@@ -49,19 +49,17 @@ exports.ok = () =>{
 	return` ✅ Ok Done ~`
 	}
 exports.welcome = () =>{
-	return`Don't forget the intro ~
-⌯ָ   ֙ Name :
-⌯ָ   ֙ Age :
-⌯ָ   ֙ Kelamin :
-⌯ָ   ֙ Askot :
-╰─ ᝬ _Please The Group Rules_  >_<`
+	return`Entry BGM Ittu Koduku Guys
+⌯
+⌯  ֙ Name : ${pushname}
+⌯
+╰─ ᝬ _Please Obey The Group Rules_  >_<`
       }
 exports.leave = () =>{
-	return`
-⌯ָ   ֙ Name :
-⌯ָ   ֙ Age :
-⌯ָ   ֙ Kelamin :
-⌯ָ   ֙ Askot :
+	return`Sed Akki Monu 🥲
+⌯
+⌯ָ   ֙ Name : ${pushname}
+⌯
 ╰─ ᝬ _Back Again Admin Permission Required_ >_<`
 }
 exports.menu = (prefix, pushname, botname) =>{
