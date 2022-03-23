@@ -63,7 +63,7 @@ exports.welcome = (pushname) =>{
 exports.leave = (pushname) =>{
 	return`╒══≽ 《 *Bye* 》 ══≽
 │
-├≽ *Bye 🤲*
+├≽    *Bye 🤲*
 ├≽ *Lib : Baileys ^3.5.3* 
 ├≽ *Bot Creator : Sachu Settan *  
 ├≽ *Total Features : 200+* 
