@@ -339,7 +339,7 @@ module.exports = rose = async (rose, mek) => {
                 if (manti.includes("://chat.whatsapp.com/")){
 		        if (!(isGroup || isAntiLink || isGroupAdmins)) return
 		        var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		        await rose.sendMessage(from, `Hmm maap nih gua kick, dilarang share link di group ini`, text , {quoted: mek})
+		        await rose.sendMessage(from, `Hmm, sorry, I'm kicking, it's forbidden to share the link in this group`, text , {quoted: mek})
 		        rose.groupRemove(from, [kic]).catch((e)=>{reply(`Bot Harus Jadi Admin`)})
 		        }
 
@@ -347,11 +347,11 @@ module.exports = rose = async (rose, mek) => {
 			if (tebakgambar.hasOwnProperty(sender.split('@')[0]) && !isCmd) {
                 jawaban = tebakgambar[sender.split('@')[0]]
                 if (budy.toLowerCase() == jawaban) {
-                    sendButMessage(from, "Selamat 😘 Jawaban kamu benar !", `• ${ownername}`, [{"buttonId": `.tebakgambar`,"buttonText": {"displayText": "Tebak Gambar"},"type": "RESPONSE"}], {quoted : mek})
+                    sendButMessage(from, "Congratulations Your answer is correct!", `• ${ownername}`, [{"buttonId": `.tebakgambar`,"buttonText": {"displayText": "Tebak Gambar"},"type": "RESPONSE"}], {quoted : mek})
                     delete tebakgambar[sender.split('@')[0]]
                     fs.writeFileSync("./database/game/tebakgambar.json", JSON.stringify(tebakgambar))
                 } else {
-                    reply("Jawaban Salah!")
+                    reply("Wrong answer !")
                 }
             }
             
@@ -399,7 +399,7 @@ case 'owner': case'own':{
 					"displayName": `${ini_list.length} kontak`,
 					"contacts": ini_list 
 					}, 'contactsArrayMessage', { quoted: mek })
-					rose.sendMessage(from, `🔸Hai, ${pushname} ! \n🔸 My Owner Number \n(Contact Him If You Have Any Doubts) \n🔸 Github: [ sachu-settan.github.io ]`, text, {quoted: hehe})
+					rose.sendMessage(from, `🔸Hai, ${pushname} ! \n\n🔸 My Owner Number \n(Contact Him If You Have Any Doubts) \n\n🔸 Github: [ sachu-settan.github.io ]`, text, {quoted: hehe})
 				}
 			break
 case 'sticker':case 'stiker':case 'stickergif':case 'stikergif':case 'sgif':case 's':
@@ -452,7 +452,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 							.toFormat('webp')
 							.save(ran)
 							} else  {
-								reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim\nDurasi sticker video 1-9 detik...`)
+								reply(`Send an image with the caption ${prefix}sticker or an image tag that has been sent\nThe duration of the video sticker is 1-9 seconds...`)
 							}
 					
              break
@@ -468,10 +468,10 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 		for(let i of result.medias){
 			if(i.url.includes('mp4')){
 				let link = await getBuffer(i.url)
-                    rose.sendMessage(from,link,video,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} *\n*Downloaded From Instagram*`})
+                    rose.sendMessage(from,link,video,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} \nDownloaded From Instagram*`})
                 } else {
                     let link = await getBuffer(i.url)
-                    rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} *\n*Downloaded From Instagram*`})                  
+                    rose.sendMessage(from,link,image,{thumbnail: Buffer.alloc(0), quoted: mek,caption: `*©  ${ownername} \nDownloaded From Instagram*`})                  
                 }
             }
             }).catch((err) => reply(`*Server Error !!*`))
@@ -479,7 +479,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
              break
 case 'pinterest': 
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
-			if(!q) return reply('Masukkan query')
+			if(!q) return reply('Enter a query')
             async function pinterestSearch(query) {
                     return new Promise((resolve, reject) => {
                         fetch(`https://www.pinterest.com/resource/BaseSearchResource/get/?source_url=%2Fsearch%2Fpins%2F%3Fq%3D${query}&data=%7B%22options%22%3A%7B%22isPrefetch%22%3Afalse%2C%22query%22%3A%22${query}%22%2C%22scope%22%3A%22pins%22%2C%22no_fetch_context_on_resource%22%3Afalse%7D%2C%22context%22%3A%7B%7D%7D&_=1619980301559`, {
@@ -709,22 +709,22 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 						if (isAntiLink) return reply('Telah di aktifkan sebelumnya')
 						antilink.push(from)
 						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
-						reply(`✅ Berhasil mengaktifkan ${command}`)
+						reply(`✅ Activate successfully ${command}`)
 					} else if (Number(args[0]) === 0) {
-						if (!isAntiLink) return reply('Udh mati')
+						if (!isAntiLink) return reply('Disabled Antlink')
 						var ini = anti.botLangsexOf(from)
 						antilink.splice(ini, 1)
 						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
 						reply(`✅ Berhasil mematikan ${command}`)
 					} else {
-						reply('1 untuk mengaktifkan, 0 untuk menonaktifkan')
+						reply('1 to enable, 0 to disable')
 					}
 					break		
 case 'memegenerator': case 'memegen':{
-									if (args.length < 1) return reply(`Kirim perintah *${prefix + command}* teks atas|teks bawah`)
-									if (!q.includes('|')) return reply(`Kirim perintah *${prefix + command}* teks atas|teks bawah`)
+									if (args.length < 1) return reply(`Send orders *${prefix + command}* top text|bottom text`)
+									if (!q.includes('|')) return reply(`Send orders *${prefix + command}* top text|bottom text`)
 									try {
-										if (!isQuotedImage) return reply(`Reply Gambar!`)
+										if (!isQuotedImage) return reply(`Reply To An Image!`)
 										reply(lang.wait())
 										var teks1 = q.split('|')[0] ? q.split('|')[0] : ''
 										var teks2 = q.split('|')[1] ? q.split('|')[1] : ''
@@ -741,10 +741,10 @@ case 'memegenerator': case 'memegen':{
 										}
 									break
 					 	case 'stickermeme': case 'memesticker': case 'memestick': case 'stickmeme': case 'stcmeme': case 'smeme':{
-						if (args.length < 1) return reply(`Kirim perintah *${prefix + command}* Alphabot`)
-									if (q.includes('|')) return reply(`Kirim perintah *${prefix + command}* Alphabot`)
+						if (args.length < 1) return reply(`Send orders *${prefix + command}* Rose-Mwol`)
+									if (q.includes('|')) return reply(`Send orders *${prefix + command}* Rose-Mwol`)
 									try {
-										if (!isQuotedImage) return reply(`Reply Gambar!`)
+										if (!isQuotedImage) return reply(`Reply To An Image!`)
 										reply(lang.wait())
 										var teks2 = args.join(' ')
 										var enmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -812,7 +812,7 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
 					await rose.groupUpdateSubject(from, `${q}`)
-					rose.sendMessage(from, `Sukses Mengubah Nama Grup Menjadi ${q}`, text, { quoted: mek })
+					rose.sendMessage(from, `Successfully Changed Group Name To ${q}`, text, { quoted: mek })
 			break          
 case 'setdesc': case 'setdesk':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
@@ -820,21 +820,21 @@ if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button T
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
 					await rose.groupUpdateDescription(from, `${q}`)
-					rose.sendMessage(from, `Sukses Mengubah Desk Grup Menjadi ${q}`, text, { quoted: mek })
+					rose.sendMessage(from, `Success in Turning a Group Desk into ${q}`, text, { quoted: mek })
 			break   
 case 'kick':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
 			if (!isBotGroupAdmins) return reply(lang.adminB())
-			if(!q)return reply(`*Format salah!*\n\n*Example : ${prefix + command} @tag*`)
+			if(!q)return reply(`*Format Error !*\n\n*Example : ${prefix + command} @tag*`)
 			var kickya = q.split('@')[1] + '@s.whatsapp.net'
 			await rose.groupRemove(from, [kickya])
-			reply(`Succses kick target!`)
+			reply(`Success kicked target!`)
 break
 case 'bc': case 'broadcast':
 			if (!isOwner) return reply(lang.owner(botname))
-			if (args.length === 0) return reply(`Kirim perintah *${prefix + command}* text`)
+			if (args.length === 0) return reply(`Send orders *${prefix + command}* text`)
 			var bcnya = await rose.chats.all()
 			if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 			var  bcnya2 = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -842,12 +842,12 @@ case 'bc': case 'broadcast':
 					for (let _ of bcnya) {
 						rose.sendMessage(_.jid, bcnya3, image, { caption: `*----「  BROADCAST 」----*\n\n${q}` })
 						}
-						reply('Sukses broadcast')
+						reply('Successful broadcast')
 					} else {
 						for (let _ of bcnya) {
-							sendButLocation(_.jid, '「 PESAN SIARAN 」\n\n' + q, '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
+							sendButLocation(_.jid, '「 BROADCAST MESSAGE 」\n\n' + q, '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
 							}
-						reply('Sukses broadcast')
+						reply('Successful broadcast')
 					}
 					break   
 
@@ -1119,7 +1119,7 @@ case 'toimg':{
 					}
 					break   
 case 'nuliskiri':{
-									if (args.length < 1) return reply(`Kirim perintah *${prefix}nuliskiri* teks`)
+									if (args.length < 1) return reply(`Send orders *${prefix}nuliskiri* teks`)
 									reply(lang.wait())
 									const tulisan = q
 									const splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
@@ -1141,13 +1141,13 @@ case 'nuliskiri':{
 									])
 									.on('error', () => reply(mess.error))
 									.on('exit', () => {
-										rose.sendMessage(from, fs.readFileSync('./database/media/nulis/images/buku/setelahkiri.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Hati-hati ketahuan!`})
+										rose.sendMessage(from, fs.readFileSync('./database/media/nulis/images/buku/setelahkiri.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Be Careful Getting Caught !`})
 										
 										})
 									}
 									break
 						case 'nuliskanan':{
-									if (args.length < 1) return reply(`Kirim perintah *${prefix}nuliskanan* teks`)
+									if (args.length < 1) return reply(`Send orders *${prefix}nuliskanan* teks`)
 									reply(lang.wait())
 									const tulisan = q
 									const splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
@@ -1169,13 +1169,13 @@ case 'nuliskiri':{
 									])
 									.on('error', () => reply(mess.error))
 									.on('exit', () => {
-										rose.sendMessage(from, fs.readFileSync('./database/media/nulis/images/buku/setelahkanan.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Hati-hati ketahuan!`})
+										rose.sendMessage(from, fs.readFileSync('./database/media/nulis/images/buku/setelahkanan.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Be Careful Getting Caught !`})
 										
 										})
 									}
 									break
 						case 'foliokiri':{
-									if (args.length < 1) return reply(`Kirim perintah *${prefix}foliokiri* teks`)
+									if (args.length < 1) return reply(`Send orders *${prefix}foliokiri* teks`)
 									reply(lang.wait())
 									const tulisan = q
 									const splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
@@ -1197,13 +1197,13 @@ case 'nuliskiri':{
 									])
 									.on('error', () => reply(mess.error))
 									.on('exit', () => {
-										rose.sendMessage(from, fs.readFileSync('./database/media/nulis/images/folio/setelahkiri.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Hati-hati ketahuan!`})
+										rose.sendMessage(from, fs.readFileSync('./database/media/nulis/images/folio/setelahkiri.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Be Careful Getting Caught !`})
 										
 										})
 									}
 									break
 						case 'foliokanan':{
-									if (args.length < 1) return reply(`Kirim perintah *${prefix}foliokanan* teks`)
+									if (args.length < 1) return reply(`Send orders *${prefix}foliokanan* teks`)
 									reply(lang.wait())
 									const tulisan = q
 									const splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
@@ -1225,7 +1225,7 @@ case 'nuliskiri':{
 									])
 									.on('error', () => reply(mess.error))
 									.on('exit', () => {
-										rose.sendMessage(from, fs.readFileSync('./database/media/nulis/images/folio/setelahkanan.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Hati-hati ketahuan!`})
+										rose.sendMessage(from, fs.readFileSync('./database/media/nulis/images/folio/setelahkanan.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Be Careful Getting Caught !`})
 										
 									})
 									}
@@ -1233,7 +1233,7 @@ case 'nuliskiri':{
 									case 'facebook': case 'fb': case 'fbdl': case 'facebookdl':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
                 if(!q)return reply(`Example : ${prefix + command} link Facebook`)
-                if (!q.includes('facebook.com') && !q.includes('fb.watch')) return reply('Itu bukan link Facebook')
+                if (!q.includes('facebook.com') && !q.includes('fb.watch')) return reply('That Is not a Facebook link')
                 await reply(lang.wait())
 try{
                 zee.Facebook(`${q}`).then(async data => {
@@ -1246,7 +1246,7 @@ try{
                     let ppfb = await getBuffer(data.medias[1].url)
                     rose.sendMessage(from, ppfb, video, {mimetype:'video/mp4', quoted: mek, caption: txt})
              })} catch {
-             	reply('Fitur sedang error')
+             	reply('Feature Error')
 } 
    }          
              break
@@ -1283,7 +1283,7 @@ try{
 case 'tebakgambar':
 if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 			if (!isGroup) return reply(lang.group())
-if (tebakgambar.hasOwnProperty(sender.split('@')[0])) return reply("Masih ada permainan yang sedang berlangsung")
+if (tebakgambar.hasOwnProperty(sender.split('@')[0])) return reply("There are still games in progress")
 hx.tebakgambar().then(async data =>{
 	tebakya = await getBuffer(data[0].image)
 jawaban = `${data[0].jawaban.replace('Jawaban ', '')}`
@@ -1401,13 +1401,13 @@ case 'otakudesu':{
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesu?apikey=${lolkey}&url=${ini_url}`)
                     get_result = get_result.result
-                    ini_txt = `Title : ${get_result.title}\nJapanese : ${get_result.japanese}\nJudul : ${get_result.judul}\nType : ${get_result.type}\nEpisode : ${get_result.episodes}\nAired : ${get_result.aired}\nProducers : ${get_result.producers}\nGenre : ${get_result.genres}\nDuration : ${get_result.duration}\nStudios : ${get_result.status}\nRating : ${get_result.rating}\nCredit : ${get_result.credit}\n`
+                    ini_txt = `Title : ${get_result.title}\nJapanese : ${get_result.japanese}\nTitle : ${get_result.judul}\nType : ${get_result.type}\nEpisode : ${get_result.episodes}\nAired : ${get_result.aired}\nProducers : ${get_result.producers}\nGenre : ${get_result.genres}\nDuration : ${get_result.duration}\nStudios : ${get_result.status}\nRating : ${get_result.rating}\nCredit : ${get_result.credit}\n`
                     get_link = get_result.link_dl
                     for (var x in get_link) {
                         ini_txt += `\n\n*${get_link[x].title}*\n`
                         for (var y in get_link[x].link_dl) {
                             ini_info = get_link[x].link_dl[y]
-                            ini_txt += `\n\`\`\`Reso : \`\`\`${ini_info.reso}\n`
+                            ini_txt += `\n\`\`\`Resolution : \`\`\`${ini_info.reso}\n`
                             ini_txt += `\`\`\`Size : \`\`\`${ini_info.size}\n`
                             ini_txt += `\`\`\`Link : \`\`\`\n`
                             down_link = ini_info.link_dl
@@ -1424,7 +1424,7 @@ case 'otakudesusearch':{
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesusearch?apikey=${lolkey}&query=${query}`)
                     get_result = get_result.result
-                    ini_txt = `Title : ${get_result.title}\nJapanese : ${get_result.japanese}\nJudul : ${get_result.judul}\nType : ${get_result.type}\nEpisode : ${get_result.episodes}\nAired : ${get_result.aired}\nProducers : ${get_result.producers}\nGenre : ${get_result.genres}\nDuration : ${get_result.duration}\nStudios : ${get_result.status}\nRating : ${get_result.rating}\nCredit : ${get_result.credit}\n`
+                    ini_txt = `Title : ${get_result.title}\nJapanese : ${get_result.japanese}\nTitle : ${get_result.judul}\nType : ${get_result.type}\nEpisode : ${get_result.episodes}\nAired : ${get_result.aired}\nProducers : ${get_result.producers}\nGenre : ${get_result.genres}\nDuration : ${get_result.duration}\nStudios : ${get_result.status}\nRating : ${get_result.rating}\nCredit : ${get_result.credit}\n`
                     get_link = get_result.link_dl
                     for (var x in get_link) {
                         ini_txt += `\n\n*${get_link[x].title}*\n`
@@ -1466,22 +1466,22 @@ case 'creepyfact':{
 	reply(txt.result.message)
 	}
 	break
-case 'cerpen':{
+case 'short story': case 'cerpen' :{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/cerpen?apikey=${zenzkey}`)
-	reply('Judul : ' + txt.result.Judul + '\n' + 'Penulis : ' + txt.result.Penulis + '\n' + 'Sumber : ' + txt.result.sumber + '\n' + 'Cerita : ' + txt.result.cerita)
+	reply('Title : ' + txt.result.Judul + '\n' + 'Penulis : ' + txt.result.Penulis + '\n' + 'Sumber : ' + txt.result.sumber + '\n' + 'Cerita : ' + txt.result.cerita)
 	}
 	break
 case 'cersex':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/cersex?apikey=${zenzkey}`)
-	reply('Judul : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita)
+	reply('Title : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita)
 	}
 	break
 case 'cersex2':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fetchJson(`https://zenzapi.xyz/api/cersex2?apikey=${zenzkey}`)
-	rose.sendMessage(from, await getBuffer(txt.result.Thumb), MessageType.image,{quoted: mek, caption: 'Judul : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita})
+	rose.sendMessage(from, await getBuffer(txt.result.Thumb), MessageType.image,{quoted: mek, caption: 'Title : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita})
 	}
 	break
 case 'huluh': case 'hilih': case 'heleh' : case 'halah': case 'reversetext':{
@@ -1494,7 +1494,7 @@ case 'huluh': case 'hilih': case 'heleh' : case 'halah': case 'reversetext':{
 case 'cercreepy':{
 	if (!isrose) return sendButMessage(from, lang.noregis(pushname), `Click Button To Verify`, [{buttonId: '.register',buttonText: {displayText: `register`,},type: 1,}], {quoted: fgif});
 	let txt = await fecthJson(`https://zenzapi.xyz/api/cercreepy?apikey=${zenzkey}`)
-	reply('Judul : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita)
+	reply('Title : ' + txt.result.Judul + '\n' + 'Cerita : ' + txt.result.Cerita)
 	}
 	break
 case 'faktaunik':{
@@ -1532,11 +1532,11 @@ if (!isOwner) return reply(lang.owner(botname))
 if (args[0] === "on") {
 if (global.anti_delete === true) return reply('Kyk nya udh on')
 global.anti_delete = true
-reply('✅ Anti delete berhasil di aktifkan')
+reply('✅ Anti-delete has been activated successfully')
 } else if (args[0] === "off") {
 if (global.anti_delete === false) return
 global.anti_delete = false
-reply('✅ Anti delete berhasil di non aktifkan')
+reply('✅ Anti-delete has been successfully deactivated')
 } else if (!q) {
 sendButMessage(from, `ANTI DELETE MODE`, `Choose one`, [{buttonId: '.antidelete on',buttonText: {displayText: `On`,},type: 1,},{buttonId: '.antidelete off',buttonText: {displayText: `Off`,},type: 1,},]);}}
 break;
@@ -1549,11 +1549,11 @@ if (!isOwner) return reply(lang.owner(botname))
 if (args[0] === "on") {
 if (global.anticall === true) return reply('Kyk nya udh on')
 global.anticall = true
-reply('✅ Anti call berhasil di aktifkan')
+reply('✅ Anti-call has been activated successfully')
 } else if (args[0] === "off") {
 if (global.anticall === false) return
 global.anticall = false
-reply('✅ Anti call berhasil di non aktifkan')
+reply('✅ Anti call has been successfully deactivated')
 } else if (!q) {
 sendButMessage(from, `ANTI CALL MODE`, `Choose one`, [{buttonId: '.anticall on',buttonText: {displayText: `On`,},type: 1,},{buttonId: '.anticall off',buttonText: {displayText: `Off`,},type: 1,},]);}}
 break;
