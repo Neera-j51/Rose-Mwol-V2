@@ -48,20 +48,24 @@ exports.wait = () =>{
 exports.ok = () =>{
 	return` ✅ Ok Done ~`
 	}
-exports.welcome = (pushname, botname) =>{
-	return`Entry BGM Ittu Koduku Guys
-⌯
-⌯  ֙ Name : ${pushname}
-⌯  ֙ Welcome Message By : ${botname}
-⌯
-╰─ ᝬ _Please Obey The Group Rules_  >_<`
+exports.welcome = (pushname) =>{
+	return`╒══≽ 《 *Welcome Brudha* 》 ══≽
+├≽ *Welcome, ${pushname} !*
+├≽ *Creator : Sachu Settan * 
+├≽ *Total Features : 200+* 
+│
+╘═══ 《 _Please Obey The Group Rules_ >_< 》═══≽
+`
       }
 exports.leave = (pushname) =>{
-	return`Sed Akki Monu 🥲
-⌯
-⌯ָ   ֙ Name : ${pushname}
-⌯
-╰─ ᝬ _Back Again Admin Permission Required_ >_<`
+	return`╒══≽ 《 *Bye* 》 ══≽
+│
+├≽ *BYE, ${pushname} !*
+├≽ *Creator : Sachu Settan * 
+├≽ *Total Features : 200+* 
+│
+╘═══ 《 _Back Again Admin Permission Required_ >_< 》═══≽
+`
 }
 exports.menu = (prefix, pushname, botname) =>{
 	return`╒══≽ 《 *USER INFO* 》 ══≽
