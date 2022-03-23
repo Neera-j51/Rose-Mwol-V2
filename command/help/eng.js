@@ -49,7 +49,8 @@ exports.ok = () =>{
 	return` ✅ Ok Done ~`
 	}
 exports.welcome = (pushname) =>{
-	return`╒══≽ 《 *Welcome Message* 》 ══≽
+	return`
+╒═════════════════════════════≽
 │
 ├≽      *WelcomeBrudha 🤗*
 ├≽ *Check Out Bot Features*
@@ -57,18 +58,19 @@ exports.welcome = (pushname) =>{
 ├≽ *Bot Creator : Sachu Settan * 
 ├≽ *Total Features : 200+* 
 │
-╘═══ 《 _Please Obey The Group Rules_ >_< 》═══≽
+╘══《 _Please Obey The Group Rules_》══≽
 `
       }
 exports.leave = (pushname) =>{
-	return`╒══≽ 《 *Bye* 》 ══≽
+	return`
+╒════════≽ 《 *Bye* 》════════════≽
 │
-├≽    *Bye 🤲*
+├≽ *Bye 🤲*
 ├≽ *Lib : Baileys ^3.5.3* 
 ├≽ *Bot Creator : Sachu Settan *  
 ├≽ *Total Features : 200+* 
 │
-╘═══ 《 _Back Again Admin Permission Required_ >_< 》═══≽
+╘═══════════════════════════════≽
 `
 }
 exports.menu = (prefix, pushname, botname) =>{
