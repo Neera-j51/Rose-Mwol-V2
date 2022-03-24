@@ -19,7 +19,7 @@
   
 ## `SCAN QR`
 
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@Sachu-Settan/Rose-Mwol-Qr-test)
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@Sachu-Settan/Rose-Mwol-V2)
 
 ## `DEPLOY`
 
