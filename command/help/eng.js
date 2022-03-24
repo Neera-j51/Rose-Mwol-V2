@@ -5,7 +5,7 @@ Sisa limit : ${prem ? '1000' : `${limitCounts}`}
 `
 }
 exports.limitend = (pushname) => {
-	return`Maaf ${pushname} limit hari ini telah habis\nlimit di reset setiap jam 24:00`
+	return`Sorry ${pushname} today's limit has run out \nlimit is reset every 24:00 hours`
 }
 exports.noregis = (pushname) =>{
 	return` 🙅‍♀️ Hi ${pushname} You Haven't Registered Yet. Type .register First`
@@ -27,26 +27,26 @@ Now Type .menu to view Rose-Mwol features.
 `
 	}
 exports.owner = (botname) =>{
-	return` 🙅‍♀️ Owner's special command ${botname}`
+	return` *🙅‍♀️ Owner's special command ${botname} *`
 	}
 exports.admin = (groupName) =>{
-	return`🙅‍♀️ Admin special commands ${groupName}`
+	return`*🙅‍♀️ Admin special commands ${groupName} *`
 	}
 exports.adminB = () =>{
-	return`⚠️ Bots are not group admins`
+	return`*⚠️ Bots are not group admins*`
 	}
 exports.err = () =>{
-	return`⚠️ This feature is in error !`
+	return`⚠️ *Feature Error !*`
 	}
 exports.group = () =>{
-	return`🙅‍♀️ Command khusus di dalam group`
+	return`*🙅‍♀️ Special commands in the group* \n[It Can Be Only Used In Groups]`
 	}
 
 exports.wait = () =>{
-	return`⏳ Being processed ~`
+	return`*⏳ Being processed ~*`
 	}
 exports.ok = () =>{
-	return` ✅ Ok Done ~`
+	return` *✅ Ok Done ~*`
 	}
 exports.welcome = (pushname) =>{
 	return`
