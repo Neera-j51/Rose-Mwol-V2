@@ -9,8 +9,8 @@ global.anticall = false // Anti Call On Or Off
 global.anti_delete = false // Anti Delete On Or Off
 
 // Settings
-global.ownername = "Sachu-Settan" // Owner Name
-global.ownernumber = "919744933034" // Owner Number
+global.ownername = "joker Adanalı gg" // Owner Name
+global.ownernumber = "905379649077" // Owner Number
 global.botname = "Rose-Mwol-V2" // Bot Name
 global.thumbnail = fs.readFileSync("./settings/rose.jpg") //bot photo
 global.background = "https://telegra.ph/file/d4c05638fa7886a1d8060.jpg" //Background Pic 
