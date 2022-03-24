@@ -11,7 +11,7 @@ exports.noregis = (pushname) =>{
 	return` 🙅‍♀️ Hi ${pushname} You Haven't Registered Yet. Type .register First`
 	}
 exports.regis = () =>{
-	return` You Have Registered 😒`
+	return` You Have Already Registered 😒`
 	}
 exports.register = (sender, pushname, time, serialUser, totalUser) =>{
 		return` *SUCCESSFUL REGISTRATION*
